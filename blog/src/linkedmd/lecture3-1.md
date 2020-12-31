@@ -1,7 +1,7 @@
 ---
-date: "2020-12-01"
+date: "2020-12-30"
 title: "알고리즘 공부 기록/강의3-1"
-path: "lectureThreebyOne"
+path: "lecture/3-1"
 ---
 
 ## 3-1. 큐, 스택, 재귀함수

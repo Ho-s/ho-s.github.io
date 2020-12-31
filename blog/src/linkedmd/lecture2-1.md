@@ -1,7 +1,7 @@
 ---
-date: "2020-12-01"
+date: "2020-12-29"
 title: "알고리즘 공부 기록/강의2-1"
-path: "lectureTwobyOne"
+path: "/lecture/2-1"
 ---
 
 ## 2-1. 그리디

@@ -1,7 +1,7 @@
 ---
-date: "2020-12-01"
+date: "2020-12-29"
 title: "알고리즘 공부 기록/강의2-2"
-path: "lectureTwobyTwo"
+path: "/lecture/2-2"
 ---
 
 ## 2-2. 구현
