@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 
 const IndexPage = ({data}) => {
+
+
   return (
     <Layout>
     <SEO title="Home" />
@@ -19,7 +21,7 @@ const IndexPage = ({data}) => {
           if(node.frontmatter.description){
             return(
               <div key={node.id}>
-              <Link style={{ textDecoration: "none", color: "black"}} to={node.fields.slug}>
+              <Link className='markdown' to={node.fields.slug}>
                 <div  style={{marginBottom:'20px',fontSize:'20px',fontWeight:'600'}}>
                   {node.frontmatter.title}{" "}
                   <span style={{float:'right',fontSize:'15px',fontWeight:'600',color:'red'}}>{node.frontmatter.date}</span>

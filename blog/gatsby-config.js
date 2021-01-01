@@ -20,7 +20,33 @@ module.exports = {
       path: `${__dirname}/src/linkedmd`,
       },
       },
-    `gatsby-transformer-remark`,
+      {
+        resolve: `gatsby-remark-prismjs`,
+        options: {
+          classPrefix: "language-",
+          inlineCodeMarker: null,
+          aliases: {},
+          showLineNumbers: true,
+          noInlineHighlight: false,
+        },
+      },
+      {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+          plugins: [
+            {
+              resolve: `gatsby-remark-prismjs`,
+              options: {
+                classPrefix: "language-",
+                inlineCodeMarker: null,
+                aliases: {},
+                showLineNumbers: false,
+                noInlineHighlight: false,
+              },
+            },
+          ],
+        },
+      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],

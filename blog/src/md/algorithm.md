@@ -23,19 +23,19 @@ description: "이코테 2021 강의 요약 노트 by 동빈나"
 - [3-3. BFS(Breadth-Frist Search)](/lecture3-3)
 
 ## 4. 정렬 알고리즘 
-- __정렬(Sorting)__ 이란 <u>데이터를 특정한 기준에 따라 순서대로 나열</u>하는 것을 말함.
-- 일반적으로 문제 상황에 따라서 적절한 정렬 알고리즘이 공식처럼 사용됨.
-![image](https://user-images.githubusercontent.com/71132893/103398643-fb5ceb80-4b80-11eb-89cb-b658958212e2.png)
 
+- [4-0. 정렬](/lecture4-0)
 - [4-1. 선택정렬](/lecture4-1)
 - [4-2. 삽입 정렬](/lecture4-2)
 - [4-3. 퀵 정렬](/lecture4-3)
 - [4-4. 계수 정렬](/lecture4-4)
 - [4-5. 문제 ](/lecture4-5)
 
-<!-- ## 5. 이진 탐색
+## 5. 이진 탐색
+- [link](/lecture5)
 
-## 6. 다이나믹 프로그래밍
+
+<!--## 6. 다이나믹 프로그래밍
 
 ## 7. 최단 경로 알고리즘
 

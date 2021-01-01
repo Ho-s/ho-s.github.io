@@ -7,7 +7,10 @@ export default ({ data }) => {
   return (
     <Layout>
       <div style={{marginBottom:'200px'}}>
-        <h4 style={{color:'gray',paddingBottom:'5px',borderBottom:'1px solid gray'}}>{post.frontmatter.title}</h4>
+        <h4 style={{paddingBottom:'5px',borderBottom:'1px solid gray'}}>
+          <span style={{color:'gray'}}>{post.frontmatter.title}</span>
+          <span style={{float:'right',color:'red'}}>{post.frontmatter.date}</span>
+        </h4>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
@@ -20,6 +23,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "DD MMMM, YYYY")
       }
     }
   }

@@ -14,7 +14,7 @@ path: "/lecture/1"
   - [백준온라인저지(BOJ)](https://www.acmicpc.net) >많은 국내 대기업 기출문제
   - [코드업(CodeUp)](https://codeup.kr) >초보자들에게 추천
   - [프로그래머스(Programmers)](https://programmers.co.kr)
-  - [SW EXPERT Academy](https://swexpertacademy.com)
+  - [SW EXPERT Academy](https://swexpertacademy.com)   
 
 - 코딩테스트에는 현재 Python과 C++으로 진행하는 것이 유리하다고 생각되어짐.
 - 프로그램 개발 방식의 코딩 테스트에서는 Python이 가장 유리하다고 생각 되어짐.
