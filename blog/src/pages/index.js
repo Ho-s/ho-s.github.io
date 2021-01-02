@@ -26,7 +26,7 @@ const IndexPage = ({data}) => {
                   {node.frontmatter.title}{" "}
                   <span style={{float:'right',fontSize:'15px',fontWeight:'600',color:'red'}}>{node.frontmatter.date}</span>
                 </div>
-                <div>{node.frontmatter.description}</div>
+                <div style={{marginBottom:'40px'}}>{node.frontmatter.description}</div>
               </Link>
             </div>
             )

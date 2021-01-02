@@ -25,6 +25,13 @@ body {
   min-height: 100vh;
 }
 
+hr{
+  margin:0 auto;
+  padding: 0;
+  border-top:1px solid gray;
+  opacity: 0.2;
+}
+
 li a{
   color: blue;
   text-decoration: none;
