@@ -59,52 +59,91 @@ description: "2020년을 회고하며..."
 
 ### 공부과정(만들기)
 - `vanilarJS`
-    1. [Youtube Clone](https://github.com/Ho-s/Youtube-clone-coding)
-    ![completed1](https://user-images.githubusercontent.com/71132893/103454570-cb504c80-4d28-11eb-9abd-e91e0d9381e5.PNG)
-        - `html`, `css`, `js` 강의를 전부 듣고 난 후 유튜브 사이트의 코드를 보지 않고 그냥 구글링을 하며 만든 것이다.
-        - 스크립트 파일은 하나로 이루어져 있는데, 지금 보면 가독성도 엄청 떨이지고, 코드들도 되게 귀엽다.
-        - 그래도 만들면서 많이 배우긴 했다.
+
+    - 다음의 프로젝트들 중 몇몇개의 아이디어는 다음을 참고하였음.
+        - [10 JavaScript Projects in 10 Hours - Coding Challenge](https://www.youtube.com/watch?v=dtKciwk_si4&ab_channel=FlorinPop)
+        - 코드는 참고하지 않았음.
+    
+    - 개인적으로 입문자들이 `js`를 연습하기에 따라 만들어보면 큰 도움이 될 것이라고 생각함.
+    - projects
+        1. [Youtube Clone](https://github.com/Ho-s/Youtube-clone-coding)
+        ![completed1](https://user-images.githubusercontent.com/71132893/103454570-cb504c80-4d28-11eb-9abd-e91e0d9381e5.PNG)
+            - `html`, `css`, `js` 강의를 전부 듣고 난 후 유튜브 사이트의 코드를 보지 않고 그냥 구글링을 하며 만든 것이다.
+            - 스크립트 파일은 하나로 이루어져 있는데, 지금 보면 가독성도 엄청 떨이지고, 코드들도 되게 귀엽다.
+            - 그래도 만들면서 많이 배우긴 했다.
+            
+
+        1. [How many hours a day do you study?](https://github.com/Ho-s/How-many-hours-a-day-do-you-study)
+        ![1](https://user-images.githubusercontent.com/71132893/103454600-11a5ab80-4d29-11eb-8d8a-d4b4ba25f345.PNG)
+            - 타이머앱인데, 하루마다 공부시간을 기록하려고 만든 웹앱이다.
+            - 처음에는 우측에 보이는 메모와 알람 기능이 없었는데, 만들어 달래서 만들어줬더니 이 웹 자체를 쓰질 않는다.
+            - 디자인이 별로긴 하나, 오류는 없이 잘 돌아가며, 아직도 잘 사용하고 있다.
+            - 하루 적어도 5시간 이상 공부하려고 노력하고 있다.
         
+        1. [Recipe search app](https://github.com/Ho-s/Recipe-app)
+        ![1](https://user-images.githubusercontent.com/71132893/103454757-7a415800-4d2a-11eb-8c28-b0135d3f856a.PNG)
+            - [The Meal DB](https://themealdb.com/)의 API를 이용하였으며, API를 이용한 첫 연습 결과물이었다.
+            - API를 처음 다룰 땐 정말 어려웠다.
 
-    1. [How many hours a day do you study?](https://github.com/Ho-s/How-many-hours-a-day-do-you-study)
-    ![1](https://user-images.githubusercontent.com/71132893/103454600-11a5ab80-4d29-11eb-8d8a-d4b4ba25f345.PNG)
-        - 타이머앱인데, 하루마다 공부시간을 기록하려고 만든 웹앱이다.
-        - 처음에는 우측에 보이는 메모와 알람 기능이 없었는데, 만들어 달래서 만들어줬더니 이 웹 자체를 쓰질 않는다.
-        - 디자인이 별로긴 하나, 오류는 없이 잘 돌아가며, 아직도 잘 사용하고 있다.
-        - 하루 적어도 5시간 이상 공부하려고 노력하고 있다.
-    
-    1. [Recipe search app](https://github.com/Ho-s/Recipe-app)
-    ![1](https://user-images.githubusercontent.com/71132893/103454757-7a415800-4d2a-11eb-8c28-b0135d3f856a.PNG)
-        - [The Meal DB](https://themealdb.com/)의 API를 이용하였으며, API를 이용한 첫 연습 결과물이었다.
-        - API를 처음 다룰 땐 정말 어려웠다.
-
-    1. [] 
-
-    1. [Clock App](https://github.com/Ho-s/Clock-App)
+        1. [Clock App](https://github.com/Ho-s/Clock-App)
         ![1](https://user-images.githubusercontent.com/71132893/103454804-d310f080-4d2a-11eb-9e7d-f3c901451ef4.PNG)
-        - 위는 완성된 모습인데,  `js`의 `canvas` 기능을 이용하였으며, 그림 그리는 것만을 이용하여 시계를 만들어 볼 수 있지 않을까? 라는 생각으로 만들어보았음.
-        - 실용성은 아예 없으나 `canvas`기능 만을 이용하는 아이디어 자체는, 당시 너무 뿌듯했었음.
+            - 위는 완성된 모습인데,  `html`의 `canvas` 기능을 이용하였으며, 그림 그리는 것만을 이용하여 시계를 만들어 볼 수 있지 않을까? 라는 생각으로 만들어보았음.
+            - 실용성은 아예 없으나 `canvas`기능 만을 이용하는 아이디어 자체는, 당시 너무 뿌듯했었음.
 
-    
-
-
-
-    1. [Quiz app](https://github.com/Ho-s/Quiz-app)
-
-
-
-매년가는 해외여행, 운동
- 라섹
+        1. [Quiz app](https://github.com/Ho-s/Quiz-app)
+        1. [Drawing App](https://github.com/Ho-s/Drawing-App) 
+        1. [Github profile search app](https://github.com/Ho-s/Github-Profile-Searching-App)
+        1. [Password generator app](https://github.com/Ho-s/Password-Generating-app)
+        1. [Nonogram](https://github.com/Ho-s/Nonogram)
 
 
+- `ReactJS`
+    - 리액트로는 현재 1개의 토이프로젝트를 완성하였으며, 다음 목표는 hooks를 이용하는 것임
+    - project
+        1. [Calendar](https://github.com/Ho-s/Calendar-with-React)  
+        ![1](https://user-images.githubusercontent.com/71132893/103136898-b1e74900-4707-11eb-8853-023687c44d5c.gif)
+    <br/>
+    <br/>
+    <br/>
+
+
+### 블로그
+- 살면서 글쓰기 같은 문과적 감성같은 것이 전혀 없는 나에게 새로운 도전인 블로그를 시작하였다.
+- 생전 해본 적 없는 블로그이기 때문에, 만들기 전에는 이것을 꼭 만들어야 하나 하는 마음도 있었지만, 블로그의 레이아웃 자체를 내가 공부하는 `react`와 공부는 하지 않지만 `js` 라이브러리인 `Gatsby`와 `graphql`을 통해서 만들 수 있어서 점점 재미가 붙는 것 같다.
+- 처음 만들 때 `Gatsby`와 `graphql`이 너무 생소해서 만드는 데 애를 먹었기 때문에, 다음에 나같은 사람을 위한 __블로그 만들기__ 에 대한 게시글도 작성할 예정이다.
+    <br/>
+    <br/>
+    <br/>
+
+### 2020년을 돌아보며...
+- 2020년도 여느해와 마찬가지로 정말 빨리 지나간 것 같다. 
+- 팬데믹때문에 매년 가던 해외여행도 가지 못해 정말 아쉽다 .
+- 몸 만들기에 맛을 들여가고 있던 찰나에 헬스장이 영업을 중지해 목표를 달성하지 못한 게  아쉽다.
+- 집에만 있어서 살이 너무 많이 쪘다.
+- 올해는 목표를 가지고 나아갈 방향이 있어서 너무 좋았다.
+    <br/>
+    <br/>
+    <br/>
+
+
+### 2021년 목표
+- `TypeScript` 정복
+- `Reduxjs` 정복
+- `NodeJs` 공부
+- `ReactNative` 공부
+- 코딩대회 참가하기
+- 협업 진행하기
+- 정보처리 기능사 자격증 따기
+- 산업체 들어가기
+    <br/>
+    <br/>
+    <br/>
+
+
+### 마무리
+2020년은 별 탈 없이 잘 지나간 것 같다. 지금 생각하기로는 섣부를 수도 있지만 진로를 잘 결정한 것 같고, 목표가 생겨서 좋다. 
+내년에 할 일이 너무 많다. 지금처럼 꾸준히 나아가자. 블로그에도 재미를 붙여보자.
+화이팅이다.
 
 
 
-
-
-- 블로그
- -목표
-
-- 요즘 생각
-- 내년엔
- -살좀빼자
