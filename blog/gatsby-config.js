@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Ho' Space`,
-    description: ``,
+    description: `This blog is powered by gatsby`,
     author: `ho-s`,
+    siteUrl: 'https://ho-s.surge.sh',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -49,6 +50,7 @@ module.exports = {
       },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-sitemap'
   ],
 }
 

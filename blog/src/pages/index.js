@@ -14,6 +14,7 @@ const IndexPage = ({data}) => {
     <SEO title="Home" />
     <Helmet>
       <link rel="shortcut icon" type="image/x-icon" href="https://user-images.githubusercontent.com/71132893/103412811-4ba46f80-4bba-11eb-94b9-454fc8d16d8d.png" />
+      <meta name="google-site-verification" content="Hv1uhwrkRDipEN3M6bZHEOFYjBado_jbT5QPE40pKjc" />
     </Helmet>
     <div style={{marginBottom:'200px'}}>
         <h4 style={{color:'gray',paddingBottom:'5px',borderBottom:'1px solid gray'}}>Recent Posts</h4>
