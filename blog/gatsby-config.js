@@ -48,6 +48,17 @@ module.exports = {
           ],
         },
       },
+      {
+        resolve: 'gatsby-plugin-robots-txt',
+        options: {
+          host: 'https://ho-s.surge.sh',
+          sitemap: 'https://ho-s.surge.sh/sitemap.xml',
+          policy: [{
+            userAgent: '*',
+            allow: '/'
+          }]
+        }
+      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-sitemap'

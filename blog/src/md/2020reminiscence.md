@@ -76,8 +76,8 @@ description: "2020년을 회고하며..."
         1. [How many hours a day do you study?](https://github.com/Ho-s/How-many-hours-a-day-do-you-study)
         ![1](https://user-images.githubusercontent.com/71132893/103454600-11a5ab80-4d29-11eb-8d8a-d4b4ba25f345.PNG)
             - 타이머앱인데, 하루마다 공부시간을 기록하려고 만든 웹앱이다.
-            - 처음에는 우측에 보이는 메모와 알람 기능이 없었는데, 만들어 달래서 만들어줬더니 이 웹 자체를 쓰질 않는다.
-            - 디자인이 별로긴 하나, 오류는 없이 잘 돌아가며, 아직도 잘 사용하고 있다.
+            - 처음에는 우측에 보이는 메모와 알람 기능이 없었는데 같이 공부하는 친구가  만들어 달래서 만들어줬더니, 그 친구는 이 웹 자체를 쓰질 않는다.
+            - 디자인이 별로긴 하나, 오류 없이 잘 돌아가며, 아직도 잘 사용하고 있다.
             - 하루 적어도 5시간 이상 공부하려고 노력하고 있다.
         
         1. [Recipe search app](https://github.com/Ho-s/Recipe-app)
