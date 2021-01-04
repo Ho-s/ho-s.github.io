@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ho-s.surge.sh/sitemap.xml
-Host: https://ho-s.surge.sh
+Sitemap: https://ho-s.github.io/sitemap.xml
+Host: https://ho-s.github.io
