@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ho-s.github.io/sitemap.xml
-Host: https://ho-s.github.io
+Sitemap: https://ho-space.netlify.app/sitemap.xml
+Host: https://ho-space.netlify.app
