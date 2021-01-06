@@ -4,31 +4,19 @@
 <p>문제 설명</p>
 <ul>
 <li>당신은 두 개의 배열 A와 B를 갖고 있다. 두 배열은 N개의 원소로 구성되어 있으며, 배열의 원소는 모두 자연수이다.</li>
-<li>당신은 <strong>최대 K번의 바꿔치기</strong> 연산을 수행할 수 있는데, 바꿔치기 연산이란 배열 A에 있는 원소 하나와 배열 B에 있는 원소 하나를 골라서 두 원소를 서로 바꾸는 것을 말한다.</li>
+<li>당신은 <strong>최대 K번의 바꿔치기</strong>연산을 수행할 수 있는데, 바꿔치기 연산이란 배열 A에 있는 원소 하나와 배열 B에 있는 원소 하나를 골라서 두 원소를 서로 바꾸는 것을 말한다.</li>
 <li>당신의 최종 목표는 배열 A의 모든 원소의 합이 최대가 되도록 하는 것이다.</li>
-<li>N, K 그리고 배열 A와 B의 정보가 주어졌을 때, 최대 K 번의 바꿔치기 연산을 수행하여 만들 수 있는 <strong>배열 A의 모든 원소의 합의 최댓값을 출력</strong> 하는 프로그램을 작성하시오</li>
-<li>
-<p>예를 들어 N=5, K=3이고, 배열 A와 B가 다음과 같다고 해보자</p>
-<ul>
+<li>N, K 그리고 배열 A와 B의 정보가 주어졌을 때, 최대 K 번의 바꿔치기 연산을 수행하여 만들 수 있는 <strong>배열 A의 모든 원소의 합의 최댓값을 출력</strong>하는 프로그램을 작성하시오</li>
+<li>예를 들어 N=5, K=3이고, 배열 A와 B가 다음과 같다고 해보자</li>
 <li>배열 A=[1,2,5,4,3]</li>
 <li>배열 B=[5,5,6,6,5]</li>
-</ul>
-</li>
-<li>
-<p>이 경우, 다음과 같이 세 번의 연산을 수행할 수 있다.</p>
-<ol>
+<li>이 경우, 다음과 같이 세 번의 연산을 수행할 수 있다.</li>
 <li>배열 A의 원소 '1'과 배열 B의 원소 '6'을 바꾸기</li>
 <li>배열 A의 원소 '2'와 배열 B의 원소 '6'을 바꾸기</li>
 <li>배열 A의 원소 '3'과 배열 B의 원소 '5'를 바꾸기</li>
-</ol>
-</li>
-<li>
-<p>세번의 연산 이후 배열 A와 배열 B의 상태는 다음과 같이 구성 될 것이다</p>
-<ul>
+<li>세번의 연산 이후 배열 A와 배열 B의 상태는 다음과 같이 구성 될 것이다</li>
 <li>배열 A=[6,6,5,4,5]</li>
 <li>배열 B=[3,5,1,2,5]</li>
-</ul>
-</li>
 <li>이때 배열 A의 모든 원소의 합은 26이 되며, 이보다 합을 더 크게 만들 수는 없다.</li>
 </ul>
 </li>
@@ -37,7 +25,7 @@
 <li>
 <p>문제 해결 아이디어</p>
 <ul>
-<li><strong>핵심 아이디어</strong> : <u>매번 배열 A에서 가장 작은 원소를 골라서, 배열 B에서 가장 큰 원소와 교체</u>한다.</li>
+<li><strong>핵심 아이디어</strong>: <u>매번 배열 A에서 가장 작은 원소를 골라서, 배열 B에서 가장 큰 원소와 교체</u>한다.</li>
 <li>가장 먼저 배열 A와 B가 주어지면 A에 대하여 오름차순 정렬하고, B에 대하여 내림차순 정렬한다.</li>
 <li>이후에 두 배열의원소를 첫 번째 인덱스 부터 차례로 확인하면서 A의 원소가 B의 원소보다 작을 때에만 교체를 수행한다.</li>
 <li>이 문제에서는 두 배열의 원소가 최대 100,000개까지 입력될 수 있으므로, 최악의 경우 O(<em>NlogN</em>)을 보장하는 정렬 알고리즘을 이용해야 한다.</li>
@@ -65,33 +53,33 @@ b<span class="token punctuation">.</span>sort<span class="token punctuation">(</
 <ul>
 <li>답안 예시(javascipt)</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> n <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'n:'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> k <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'k:'</span><span class="token punctuation">)</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> n <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"n:"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> k <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"k:"</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> a<span class="token operator">=</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'a:'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> b<span class="token operator">=</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'b:'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"a:"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"b:"</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> arrayA<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">const</span> arrayB<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    arrayA<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    arrayB<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> arrayA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> arrayB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  arrayA<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  arrayB<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
 arrayA<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 arrayB<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>arrayA<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>arrayB<span class="token punctuation">[</span>arrayB<span class="token punctuation">.</span>length<span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        arrayA<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arrayB<span class="token punctuation">[</span>arrayB<span class="token punctuation">.</span>length<span class="token operator">-</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        <span class="token keyword">break</span>
-    <span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> k<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>arrayA<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arrayB<span class="token punctuation">[</span>arrayB<span class="token punctuation">.</span>length <span class="token operator">-</span> i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    arrayA<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arrayB<span class="token punctuation">[</span>arrayB<span class="token punctuation">.</span>length <span class="token operator">-</span> i<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">break</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">let</span> result<span class="token operator">=</span><span class="token number">0</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arrayA<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    result<span class="token operator">+=</span>arrayA<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arrayA<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  result <span class="token operator">+=</span> arrayA<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span></code></pre></div></div></div></main></div><nav><div><div style="width:160px;height:160px;border-radius:160px;background-size:400px 260px;background-position:center;background-repeat:no-repeat;background-image:url(https://user-images.githubusercontent.com/71132893/103438501-ec586500-4c76-11eb-8914-28a85fa2cae7.jpg)"></div></div><div><div style="margin:20px 0;font-weight:600;font-size:20px">Ho-s</div><div style="margin-bottom:10px;font-size:16px">Hi, I&#x27;m frontend developer</div></div><div><div><a href="mailto:kjcoco13@gmail.com"><div style="float:left;margin-bottom:10px;margin-right:100px;display:block;width:60px;height:20px;background-image:url(https://img.shields.io/badge/Gmail-d14836?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:kjcoco13@gmail.com);background-repeat:no-repeat;background-size:contain"></div></a></div><div><a href="https://github.com/Ho-s"><div style="float:left;width:60px;height:20px;background-image:url(https://img.shields.io/badge/Github-black?style=flat-square&amp;logo=github);background-repeat:no-repeat;background-size:contain"></div></a></div></div></nav><footer style="font-size:12px;position:absolute;bottom:0;background-color:#e9e9e9;width:calc(100% - 40vw);padding:2vw 20vw;height:60px"><div style="font-weight:600;float:left">Follow me in </div><a href="https://github.com/Ho-s"><div style="margin:5px 2px 0px 20px;float:left;width:30px;height:15px;background-image:url(https://user-images.githubusercontent.com/71132893/103414512-a1304a80-4bc1-11eb-93ee-b4bd31af9e57.png);background-repeat:no-repeat;background-size:contain"></div><div style="font-weight:600;color:black;float:left">Github</div></a><a href="mailto:kjcoco13@gmail.com"><div style="margin:5px 2px 0px 20px;float:left;width:30px;height:15px;background-image:url(https://user-images.githubusercontent.com/71132893/103415271-bd81b680-4bc4-11eb-8ddc-08f84d52f406.png);background-repeat:no-repeat;background-size:contain"></div><div style="font-weight:600;color:black;float:left">Gmail</div></a><div style="margin-top:30px">© 2021 Ho&#x27; Space. Powered by graphql &amp; Gatsby.</div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/lecture4-5/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-e310ad7bfc5d0ad624ce.js"],"app":["/app-8f766362cdb58311d292.js"],"component---markdown-template-js":["/component---markdown-template-js-59c21e8ad80990ee4dcb.js"],"component---src-pages-404-js":["/component---src-pages-404-js-7ee97ba2922fff5d436c.js"],"component---src-pages-about-jsx":["/component---src-pages-about-jsx-15f10f1be6bea867c2e2.js"],"component---src-pages-blog-jsx":["/component---src-pages-blog-jsx-b50d1b8419c59c05fb3f.js"],"component---src-pages-contact-jsx":["/component---src-pages-contact-jsx-13a7cc951660bb1de01f.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-2ffd1830c2c6d9d13681.js"]};/*]]>*/</script><script src="/polyfill-e310ad7bfc5d0ad624ce.js" nomodule=""></script><script src="/component---markdown-template-js-59c21e8ad80990ee4dcb.js" async=""></script><script src="/app-8f766362cdb58311d292.js" async=""></script><script src="/framework-de237a875aa45b276a9d.js" async=""></script><script src="/styles-55e82d6ff5158c00b714.js" async=""></script><script src="/webpack-runtime-7a8a16abe39e683e6b75.js" async=""></script></body></html>

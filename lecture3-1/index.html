@@ -3,7 +3,7 @@
 <li>
 <p>그래프 탐색 알고리즘 : DFS/BFS</p>
 <ul>
-<li>탐색(Search)이란 많은 양의 데이터 중에서 <strong>원하는 데이터를 찾는 과정</strong> 을 말함.</li>
+<li>탐색(Search)이란 많은 양의 데이터 중에서 <strong>원하는 데이터를 찾는 과정</strong>을 말함.</li>
 <li>대표적인 그래프 탐색 알고리즘으로는 DFS와 BFS가 있음.</li>
 <li>DFS/BFS는 코딩테스트에서 매우 자주 등장하는 유형이므로 필히 숙지가 요구됨.</li>
 </ul>
@@ -12,7 +12,7 @@
 <p>스택 자료구조</p>
 <ul>
 <li>먼저 들어온 데이터가 나중에 나가는 형식(선입후출)의 자료구조</li>
-<li><strong>입구와 출구가 동일한 형태</strong> 로 스택을 시각화할 수 있음.<br>
+<li><strong>입구와 출구가 동일한 형태</strong>로 스택을 시각화할 수 있음.<br>
 <img src="https://user-images.githubusercontent.com/71132893/103338205-02bcc000-4ac1-11eb-8fdb-733b8a41203c.png" alt="image"></li>
 <li>스택 구현 예제(Python)</li>
 </ul>
@@ -35,7 +35,7 @@ stack<span class="token punctuation">.</span>pop<span class="token punctuation">
 <p>큐 자료구조</p>
 <ul>
 <li>먼저 들어온 데이터가 먼저 나가는 형식(선입선출)의 자료구조</li>
-<li>큐는 <strong>입구와 출구가 모두 뚫려있는 터널과 같은 형태</strong> 로 시각화 할 수 있음.
+<li>큐는 <strong>입구와 출구가 모두 뚫려있는 터널과 같은 형태</strong>로 시각화 할 수 있음.
 <img src="https://user-images.githubusercontent.com/71132893/103338602-3cda9180-4ac2-11eb-9113-5a43adda39fd.png" alt="image"></li>
 <li>큐 구현 예제(python)</li>
 </ul>
@@ -67,14 +67,12 @@ queue<span class="token punctuation">.</span>reverse<span class="token punctuati
 <li>어느정도 출력하다가 최대 재귀 깊이 초과 메시지가 출력됨</li>
 </ul>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">recursive_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'재귀 함수를 호출합니다.'</span><span class="token punctuation">)</span>
-    recursive_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'재귀 함수를 호출합니다.'</span><span class="token punctuation">)</span>
+  recursive_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
 recursive_function<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
 <ul>
-<li>
-<p>재귀 함수의 종료 조건</p>
-<ul>
+<li>재귀 함수의 종료 조건</li>
 <li>재귀 함수를 문제 풀이에서 사용할 때는 재귀 함수의 종료 조건을 반드시 명시해야 함.</li>
 <li>종료 조건을 제대로 명시하지 않으면 함수가 무한히 호출될 수 있음.</li>
 <li>종료 조건을 포함한 재귀 함수 예제</li>
@@ -87,10 +85,8 @@ recursive_function<span class="token punctuation">(</span><span class="token pun
     recursive_function<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token string">'번째 재귀함수를 종료합니다'</span><span class="token punctuation">)</span>
 recursive_function<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre></div>
-</li>
-<li>
-<p>팩토리얼 구현 예제</p>
 <ul>
+<li>팩토리얼 구현 예제</li>
 <li>n! = 1 X 2 X 3 X ... X (n-1) X n</li>
 <li>수학적으로 0!과 1!의 값은 1임.</li>
 </ul>
@@ -112,10 +108,8 @@ recursive_function<span class="token punctuation">(</span><span class="token num
 <span class="token comment">#각각의 방식으로 구현한 n! 출력 (n=5)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'반복적으로 구현:'</span><span class="token punctuation">,</span>factorial_iterative<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'재귀적으로 구현:'</span><span class="token punctuation">,</span>factorial_recursive<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
-</li>
-<li>
-<p>최대 공약수 계산(유클리드 호제법)예제</p>
 <ul>
+<li>최대 공약수 계산(유클리드 호제법)예제</li>
 <li><u>두개의 자연수에 대한 최대공약수</u>를 구하는 대표적인 알고리즘으로는 유클리드 호제법이 있음</li>
 <li>
 <p><strong>유클리드 호제법</strong></p>
@@ -126,19 +120,17 @@ recursive_function<span class="token punctuation">(</span><span class="token num
 </li>
 <li>유클리드 호제법의 아이디어를 그대로 재귀 함수로 작성할 수 있음.
 <img src="https://user-images.githubusercontent.com/71132893/103349572-876b0680-4ae0-11eb-93b7-a238b17a43c4.png" alt="image"></li>
-<li>예제(python)</li>
-</ul>
+<li>
+<p>예제(python)</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gcd</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> a<span class="token operator">%</span>b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> b
-    <span class="token keyword">else</span> <span class="token punctuation">:</span>
-        <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token operator">%</span>b<span class="token punctuation">)</span>
+<span class="token keyword">if</span> a<span class="token operator">%</span>b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> b
+<span class="token keyword">else</span> <span class="token punctuation">:</span>
+    <span class="token keyword">return</span> gcd<span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token operator">%</span>b<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>gcd<span class="token punctuation">(</span><span class="token number">192</span><span class="token punctuation">,</span><span class="token number">162</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># 실행 결과 : 6</span></code></pre></div>
 </li>
-<li>
-<p>재귀함수 사용의 유의 사항</p>
-<ul>
+<li>재귀함수 사용의 유의 사항</li>
 <li>
 <p>재귀 함수를 잘 활용하면 복잡한 알고리즘을 간결하게 작성할 수 있음.</p>
 <ul>
@@ -150,9 +142,7 @@ recursive_function<span class="token punctuation">(</span><span class="token num
 <li>
 <p>컴퓨터가 함수를 연속적으로 호출하면 컴퓨터 메모리 내부의 스택 프레임에 쌓임.</p>
 <ul>
-<li>그래서 스택을 사용해야 할 때 구현상 <strong>스택 라이브러리 대신에 재귀함수를 이용</strong> 하는 경우가 많음.</li>
-</ul>
-</li>
+<li>그래서 스택을 사용해야 할 때 구현상 <strong>스택 라이브러리 대신에 재귀함수를 이용</strong>하는 경우가 많음.</li>
 </ul>
 </li>
 </ul>
