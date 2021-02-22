@@ -1,0 +1,1 @@
+{"componentChunkName":"component---markdown-template-js","path":"/useMemo/","result":{"data":{"markdownRemark":{"html":"<p>useMemo는 함수의 리턴값을 기억해놓고 실행하는 것이다.</p>","frontmatter":{"title":"useMemo 간단한 이해","date":"22 February, 2021"},"tableOfContents":""}},"pageContext":{"slug":"/useMemo/"}},"staticQueryHashes":[]}
