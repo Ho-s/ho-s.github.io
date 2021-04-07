@@ -39,10 +39,12 @@
 <url> <loc>https://ho-space.netlify.app/lecture8-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture9-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture9-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ho-space.netlify.app/TechnicalNote/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/JadenCase/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ho-space.netlify.app/preparing-for-coding-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/camouflage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/openChat/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/preparing-for-coding-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/TechnicalNote/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/searchingRanking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
