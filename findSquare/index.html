@@ -185,39 +185,151 @@
 <h2 id="풀이" style="position:relative;"><a href="#%ED%92%80%EC%9D%B4" aria-label="풀이 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>풀이</h2>
 <h3 id="아이디어" style="position:relative;"><a href="#%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4" aria-label="아이디어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아이디어</h3>
 <ul>
-<li>각 부위 별로 의상이 주어지는데 겹치지 않게 입는 경우의 수를 생각한다.</li>
-<li>부위마다 안 입는 경우를 고려해주며, 마지막에는 아무것도 입지 않는 경우는 없다고 명시되어 있으므로 이것또한 고려해준다.</li>
-<li>식 = (머리부위 의상 개수 + 1) * (눈부위 의상 개수 + 1) * ... -1 </li>
-<li>부위마다 안 입는 경우의 수 = + 1 , 아무것도 입지 않는 경우의수 = - 1</li>
-<li>객체에 부위별로 변수를 넣어주며 변수가 존재할 경우 기존 값에 1을 더하여주는 식으로, 위에 식에 대입하여 계산을 해준다.</li>
+<li>다이나믹 프로그래밍을 이용한 방법을 생각해본다.</li>
+<li>왼쪽 위(0,0)부터 시작해서 오른쪽 아래로 진행하면서, 정사각형을 찾아나간다.</li>
+<li>각변의 길이가 1이 아닌 경우 정사각형은 최소한 다음을 만족해야 한다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>여기서 우 하단의 값에, 나머지 값을 비교한 최솟값에 1을 더한 값을 더해줄 건데 이렇게 하는 이유는 나머지 값이 1이상, 즉 정사각형에 해당한다면 길이의 값을 누적하기 위함이고, 1이상이 아니라면 1의 값을 다시 돌려주기 위함이다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code class="language-text">2</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>첫 번째 표는 두 번째의 표처럼 될 것이고, 중간에 0이 나와 값이 끊긴다면 다시 1을 반환해주면 된다. 여기서 주의할 점은 우 하단의 값은 1이어야 한다는 점이다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code class="language-text">2</code></td>
+<td><code class="language-text">3</code></td>
+<td><code class="language-text">4</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code class="language-text">2</code></td>
+<td><code class="language-text">3</code></td>
+<td><code class="language-text">4</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code class="language-text">2</code></td>
+<td><code class="language-text">3</code></td>
+<td><code class="language-text">4</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>가령 전체가 1로이루어진 표의 경우는 위처럼 이루어질 것이며,</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code class="language-text">2</code></td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code class="language-text">2</code></td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>중간에 0으로 끊어진 곳이 있다면 그 전까지만 계산이 될 것이다.</li>
 </ul>
 <h3 id="답안" style="position:relative;"><a href="#%EB%8B%B5%EC%95%88" aria-label="답안 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>답안</h3>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span><span class="token parameter">board</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> answer <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">const</span> maxRow<span class="token operator">=</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length
     <span class="token keyword">const</span> maxColumn<span class="token operator">=</span>board<span class="token punctuation">.</span>length
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>maxColumn<span class="token punctuation">,</span>maxRow<span class="token punctuation">)</span>
-    <span class="token keyword">let</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>maxRow <span class="token operator">></span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> maxColumn<span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> maxColumn<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> maxRow<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-                array<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                array<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                array<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token keyword">let</span> min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>array<span class="token punctuation">)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>maxRow <span class="token operator">&lt;=</span><span class="token number">1</span> <span class="token operator">||</span> maxColumn<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> maxColumn<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> maxRow<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">!==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">let</span> min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>board<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
                 board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>min<span class="token operator">+</span><span class="token number">1</span>
-                array<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token keyword">let</span> max <span class="token operator">=</span>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>array<span class="token punctuation">)</span>
+                <span class="token keyword">let</span> max <span class="token operator">=</span>board<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
                 answer <span class="token operator">=</span> answer <span class="token operator">></span>max <span class="token operator">?</span> answer<span class="token operator">:</span>max
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        answer<span class="token operator">=</span><span class="token number">1</span>
     <span class="token punctuation">}</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span>
-    answer<span class="token operator">*=</span>answer
-    <span class="token keyword">return</span> answer<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> answer<span class="token operator">*</span>answer<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h2 id="출처" style="position:relative;"><a href="#%EC%B6%9C%EC%B2%98" aria-label="출처 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>출처</h2>
 <blockquote>
