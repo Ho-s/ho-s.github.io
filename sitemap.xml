@@ -3,6 +3,7 @@
 <url> <loc>https://ho-space.netlify.app/2020reminiscence/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/how-to-change-object-state-in-hooks/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/how-to-get-items-be-in-center/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/TechnicalNote/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/how-to-make-a-blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/Mysql-Nodejs-and-Express/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/algorithm/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -42,7 +43,6 @@
 <url> <loc>https://ho-space.netlify.app/lecture8-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture9-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture9-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ho-space.netlify.app/TechnicalNote/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/preparing-for-coding-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/JadenCase/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/camouflage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
