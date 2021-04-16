@@ -22,15 +22,18 @@
 <url> <loc>https://ho-space.netlify.app/lecture11/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture15/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture14/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ho-space.netlify.app/visitLength/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture3-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/draw/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/menuRenewal/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture2-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture2-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/targetNumber/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture3-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/stringCompression/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture3-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/searchingRanking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture4-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/visitLength/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture4-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture4-0/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/lecture4-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -54,7 +57,6 @@
 <url> <loc>https://ho-space.netlify.app/openChat/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/124country/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/carpet/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ho-space.netlify.app/searchingRanking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
