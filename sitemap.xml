@@ -62,6 +62,7 @@
 <url> <loc>https://ho-space.netlify.app/visitLength/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/preparing-for-coding-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/groundPicking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ho-space.netlify.app/jumpAndTeleport/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ho-space.netlify.app/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
