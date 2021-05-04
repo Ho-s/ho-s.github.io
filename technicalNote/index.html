@@ -484,8 +484,178 @@
 <p>시간 복잡도 : O(E log V)</p>
 </li>
 </ul>
-<!-- ## 네트워크
-## 운영체제
+<h2 id="1-3-네트워크" style="position:relative;"><a href="#1-3-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" aria-label="1 3 네트워크 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-3. 네트워크</h2>
+<h3 id="http의-get과-post-비교" style="position:relative;"><a href="#http%EC%9D%98-get%EA%B3%BC-post-%EB%B9%84%EA%B5%90" aria-label="http의 get과 post 비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP의 GET과 POST 비교</h3>
+<p>공통점은 GET과 POST 모두, HTTP 프로토콜을 이용하여 서버에 무엇인가를 요청할 때 사용하는 방식이다. 하지만 둘의 특징을 제대로 이해하여, 기술의 목적에 알맞은 용도로 사용해야 한다.</p>
+<h4 id="get" style="position:relative;"><a href="#get" aria-label="get permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET</h4>
+<p>우선 GET 방식은, 요청하는 데이터가 HTTP Request Message의 Header 부분에 url이 담겨서 전송된다. 때문에 url 의 <code class="language-text">?</code> 뒤에 데이터가 붙어 request를 보내게 되는 것이다. 이러한 방식은 url이라는 공간에 담겨서 가기 때문에, 전송할 수 있는 데이터의 크기가 제한적이다. 또한, 보안이 필요한 데이터에 대해서는 데이터가 그대로 url에 노출되므로 <code class="language-text">GET</code>방식은 적절하지 않다(ex. password)</p>
+<h4 id="post" style="position:relative;"><a href="#post" aria-label="post permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST</h4>
+<p>POST 방식의 request는 HTTP Request Message의 Body 부분에 데이터가 담겨서 전송된다. 때문에, 바이너리 데이터를 요청하는 경우에는 POST 방식으로 보내야하는데, 이는 POST의 데이터 크기가 GET방식보다 크고 보안면에서 낫기 때문이다(하지만 보안적인 측면에서는 암호화를 하지 않는 이상 비슷하다.).</p>
+<h4 id="비교" style="position:relative;"><a href="#%EB%B9%84%EA%B5%90" aria-label="비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>비교</h4>
+<ul>
+<li>
+<p>우선 GET은 가져오는 것이다. 서버에서 어떤 데이터를 가져와서 보여주기만 하는 용도인 것이지, 서버의 값이나 상태 등을 변경하지 않는 SELECT적인 성향을 갖고있다. 반면에 POST는 서버의 값이나 상태를 변경하거나 혹은 추가하기 위해서 사용되는 것이다.</p>
+</li>
+<li>
+<p>부수적인 차이점을 좀 더 살펴보자면 GET방식의 요청은 브라우저에 Caching할 수 있다. 때문에 POST 방식으로 요청해야만하는 것을, 보내는 데이터의 크기가 작고 보안적인 문제가 없다는 이유로 GET방식으로 요청한다면 기존에 Caching되었던 데이터가 응당해 문제가 될 가능성이 존재한다. 때문에 목적에 맞는 기술을 사용하는 것이 중요하다.<br>
+<em>Caching : 기본적으로는 저장한다는 뜻이다. 오랜시간이 걸리는 작업의 결과를 저장해서, 차후에 사용할 때를 대비해 시간과 비용을 필요를 회피하는 기법이다.</em></p>
+</li>
+</ul>
+<h3 id="http와-https" style="position:relative;"><a href="#http%EC%99%80-https" aria-label="http와 https permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP와 HTTPS</h3>
+<h4 id="http의-문제점" style="position:relative;"><a href="#http%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90" aria-label="http의 문제점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP의 문제점</h4>
+<ul>
+<li>HTTP는 평문 통신이기 때문에 도청이 가능하다.</li>
+<li>통신 상대를 확인하지 않기 때문에 위장이 가능하다.</li>
+<li>완전성을 증명할 수 없기 때문에 변고가 가능하다.</li>
+</ul>
+<p><em>위 세가지는 다른 암호화 하지 않은 프로토콜에도 공통되는 문제점이다</em></p>
+<h5>TCP/IP는 도청이 가능한 네트워크이다.</h5>
+<p>TCP/IP 구조의 통신은 전부 통신 경로 상에서 엿볼 수 있다. 패킷을 수집하는 것만으로 도청할 수 있다. 평문으로 통신을 할 경우 메시지의 의미를 파악할 수 있기 때문에, 암호화하여 통신해야 한다.</p>
+<h6>보안 방법</h6>
+<ol>
+<li>통신 자체를 암호화 SSL(Secure Socket Layer) or TLS(Transport Layer Security)라는 다른 프로토콜을 조합함으로써 HTTP의 통신 내용을 암호화할 수 있다. SSL을 조합한 HTTP를 HTTPS(HTTP secure) or HTTP over SSL이라고 부른다.</li>
+<li>콘텐츠를 암호화한다. 말 그대로, HTTP를 사용해서 운반하는 내용인 HTTP 메시지안에, 포함되는 콘텐츠만을 암호화하는 것이다. 암호화해서 전송하면 메시지를 받는 측에서는 그 암호를 해독하여 출력하는 처리가 필요하다.</li>
+</ol>
+<h5>통신 상대를 확인하지 않기 때문에 위장이 가능하다.</h5>
+<p>HTTP에 의한 통신에는 상대가 누구인지 확인하는 처리가 없기 때문에 누구든지 리퀘스트를 보낼 수 있다. IP 주소나 포트 등에서 그 웹 서버에 액세스 제한이 없는 경우, 리퀘스트가 오면 상대가 누구든지 무언가의 리스폰스를 반환한다. 이러한 특징은 여러 문제점을 유발한다.</p>
+<ol>
+<li>리퀘스트를 보낸 곳의 웹 서버가 원래 의도한 리스폰스를 보내야하는 웹 서버인지 확인할 수 없다.</li>
+<li>리스폰스를 반환한 곳의 클라이언트가 원래 의도한 리퀘스트를 보낸 클라이언트인지 확인할 수 없다.</li>
+<li>통신하고 있는 상대가 접근이 허가된 상대인지를 확인할 수 없다.</li>
+<li>어디에서 누가 리퀘스트를 했는지 확인할 수 없다.</li>
+<li>의미없는 리퀘스트도 수신하게 된다. -> DoS 공격을 방지할 수 없다.</li>
+</ol>
+<h6>보안 방법</h6>
+<p>위 암호화 방법으로 언급된 SSL로 상대를 확인할 수 있다. SSL은 상대를 확인하는 수단으로 <strong>증명서</strong>를 제공하고 있다. 증명서는 신뢰할 수 있는 <strong>제 3기관에 의해 발행</strong>되는 것이기 때문에 서버나 클라이언트가 실재한다는 사실을 증명한다. 이 증명서를 이용함으로써 내가 누구와 통신하고 있는지, 통신 상대를 구별할 수 있고 이용자는 개인 정보 누설 등의 위험성이 줄어들게 된다. 또한, 클라이언트는 이 증명서로 본인 확인을 하고 웹사이트 인증에서도 이용할 수 있다.</p>
+<h5>완전성을 증명할 수 없기 때문에 변조가 가능하다.</h5>
+<p>여기서 완전성이란, 정보의 정확성을 의미한다. 서버 또는 클라이언트에서 수신한 내용이 송신측에서 보낸 내용과 일치한다라는 것을 보장할 수가 없는 것이다. 리퀘스트나 리스폰스가 발신된 후에, 누군가에 의해 정보가 변조되더라도 이 사실을 알 수가 없다. 이와 같이 공격자가 도중에 리퀘스트나 리스폰스를 빼앗아 변조하는 공격을 중간자 공격(Man-in-the-Middle)이라고 부른다.</p>
+<h6>보완 방법</h6>
+<p>MD5, SHA-1 등의 해시 값을 확인하는 방법과 파일의 디지털 서명을 확인하는 방법도 존재하지만, 확실히 확인할 수 있는 것은 아니다. 확실히 방지하기에는 HTTPS를 사용해야 한다. SSL에는 인증이나 암호화, 그리고 다이제스트 기능을 제공하고 있다.</p>
+<h4 id="https" style="position:relative;"><a href="#https" aria-label="https permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTPS</h4>
+<ul>
+<li>
+<p>HTTPS는 SSL의 껍질을 덮어쓴 HTTP라고 할 수 있다. 즉, HTTPS는 새로운 애플리케이션 계층의 프로토콜이 아니라는 것이다. HTTP 통신하는 소켓 부분을 SSL(Secure Socket Layer) or TLS(Transport Layer Security)라는 프로토콜로 대체하는 것뿐이다. HTTP는 원래 TCP와 직접 통신했지만, HTTPS에서 HTTP는 SSL과 통신하고 SSL이 TCP와 통신하게 된다. SSL을 사용한 HTTPS는 암호화와 증명서, 안전성 보호를 이용할 수 있게 된다.</p>
+</li>
+<li>
+<p>HTTPS의 SSL에서는 공통키 암호화 방식과 공개키 암호화 방식을 혼합한 하이브리드 암호화 시스템을 사용한다. 공통키를 공개키 암호화 방식으로 교환한 다음에, 다음부터의 통신은 공통키 암호를 사용하는 방식이다.</p>
+</li>
+</ul>
+<h5>모든 웹 페이지에서 HTTPS를 사용해도 될까?</h5>
+<ul>
+<li>
+<p>평문 통신에 비해서 암호화 통신은 CPU나 메모리 등의 리소스를 더 많이 요구한다. 통신할 때마다 암호화를 하면 추가적인 리소스를 소비하기 때문에 서버 한 대당 처리할 수 있는 리퀘스트의 수가 상대적으로 줄어들게 된다.</p>
+</li>
+<li>
+<p>하지만 최근에는 하드웨어의 발달로 인해 HTTPS를 사용하더라도 속도 저하가 거의 일어나지 않으며, 새로운 표준인 HTTP 2.0을 함께 이용한다면 오히려 HTTPS가 HTTP보다 더 빠르게 작동한다. 따라서 과거의 웹은 민감한 정보를 다룰 때만 HTTPS에 의한 암호화 통신을 사용하는 방식이었다면, 현재는 모든 웹 페이지에서 HTTPS를 적용하는 방향으로 바뀌어가고 있다.</p>
+</li>
+</ul>
+<h3 id="tcp와-udp" style="position:relative;"><a href="#tcp%EC%99%80-udp" aria-label="tcp와 udp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TCP와 UDP</h3>
+<h4 id="udpuser-datagram-protocol-사용자-데이터그램-프로토콜" style="position:relative;"><a href="#udpuser-datagram-protocol-%EC%82%AC%EC%9A%A9%EC%9E%90-%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C" aria-label="udpuser datagram protocol 사용자 데이터그램 프로토콜 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UDP(User Datagram Protocol, 사용자 데이터그램 프로토콜)</h4>
+<ul>
+<li>
+<p>UDP는 <strong>비연결형 프로토콜</strong>이다. IP데이터그램을 캡슐화하여 보내는 방법과, 연결 설정을 하지 않고 보내는 방법을 제공한다. UDP는 흐름제어, 오류제어 또는 손상된 세그먼트의 수신에 대한 <strong>재전송을 하지 않는다</strong>. 이 모두가 사용자 프로세스의 몫이다. UDP가 행하는 것은 포트들을 사용하여 IP프로토콜에 인터페이스를 제공하는 것이다.</p>
+</li>
+<li>
+<p>종종 클라이언트는 서버로 짧은 요청을 보내고, 짧은 응답을 기대한다. 만약 요청 또는 응답이 손실된다면 클라이언트는 time out되고, 응답을 다시 시도할 수 있으면 된다. 코드가 간단할 뿐만 아니라 TCP처럼 초기설정(initial setup)에서 요구되는 프로토콜 보다 적은 메시지가 요구된다.</p>
+</li>
+<li>
+<p>UDP를 사용한 것들에는 DNS가 있다. 어떤 호스트 네임의 IP주소를 찾을 필요가 있는 프로그램은, DNS서버로 호스트 네임을 포함한 UDP 패킷을 보낸다. 이 서버는 호스트의 IP주소를 포함한 UDP패킷으로 응답한다. 사전에 설정이 필요하지 않으며 그 후에 해제 또한 필요하지 않다.</p>
+</li>
+</ul>
+<h4 id="tcptransmission-control-protocol-전송-제어-프로토콜" style="position:relative;"><a href="#tcptransmission-control-protocol-%EC%A0%84%EC%86%A1-%EC%A0%9C%EC%96%B4-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C" aria-label="tcptransmission control protocol 전송 제어 프로토콜 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TCP(Transmission Control Protocol, 전송 제어 프로토콜)</h4>
+<ul>
+<li>
+<p>대부분의 인터넷 응용 분야들은 신뢰성과 순차적인 전달을 필요로 한다. UDP로는 이를 만족시킬 수 없기 때문에, 탄생한 것이 TCP이다. TCP는 신뢰성이 없는 인터넷을 통해 종단간에 신뢰성이 있는 바이트 스트림을 전송하도록 특별히 설계되었다. TCP 서비스는 송신자와 수신자 모두가 소켓이라고 부르는 종단점을 생성함으로써 이루어진다. TCP에서 연결성립(connection establishment)는 3-way handshake를 통해 행해진다.</p>
+</li>
+<li>
+<p>모든 TCP 연결은 전이중(Full-duplex), 점대점(point-to-point)방식이다. 전이중이란 전송이 양방향으로 동시에 일어날 수 있음을 의미하며, 점대점이란 각 연결이 정확히 2개의 종단점을 가지고 있음을 의미한다. TCP는 멀티캐스팅이나 브로드캐스팅을 지원하지 않는다.</p>
+</li>
+</ul>
+<h3 id="3-way-handshake" style="position:relative;"><a href="#3-way-handshake" aria-label="3 way handshake permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3-way-handshake</h3>
+<p>3-way-handshake란, TCP에서 연결 성립(connection establishment)을 시킬 때 사용되는 기법이다.</p>
+<p><img src="https://user-images.githubusercontent.com/71132893/116960525-986c9400-acdb-11eb-91f6-118897d140e8.png" alt="image"></p>
+<ol>
+<li>클라이언트는 서버에 접속을 요청하는 <strong>SYN(a)</strong> 패킷을 보낸다.</li>
+<li>서버는 클라이언트의 요청인 <strong>SYN(a)</strong> 를 받고, 클라이언트에게 요청을 수락한다는 <strong>ACK(a + 1)</strong> 과 <strong>SYN(b)</strong> 가 설정된 패킷을 보낸다.</li>
+<li>클라이언트는 서버의 수락 응답인 <strong>ACK(a + 1)</strong> 와 <strong>SYN(b)</strong> 패킷을 받고, <strong>ACK(b + 1)</strong> 을 서버로 보내면 연결이 <strong>성립(establishment)</strong> 된다.</li>
+</ol>
+<p><em>SYN : SYNchronize sequence number</em><br>
+<em>ACK : ACKnowledgement</em></p>
+<h4 id="왜-3-way인가-2-way로는-충분하지-않은가" style="position:relative;"><a href="#%EC%99%9C-3-way%EC%9D%B8%EA%B0%80-2-way%EB%A1%9C%EB%8A%94-%EC%B6%A9%EB%B6%84%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80%EA%B0%80" aria-label="왜 3 way인가 2 way로는 충분하지 않은가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>왜 3-way인가? 2-way로는 충분하지 않은가?</h4>
+<p>비유를 들어보자, 일단 클라이언트가 자신의 목소리가 들리는지 물어본다(SYN(a)). 서버는 클라이언트의 목소리가 들린다고 말한다(ACK(a + 1)). 그리고 자신의 목소리가 들리는지 물어본다(SYN(b)). 클라이언트는 서버의 목소리가 들린다고 말한다(ACK(b + 1)). 이런 과정인 셈이다. TCP connection은 양방향성 connection이다. 클라이언트에서 서버에게 존재를 알리고 패킷을 보낼 수 있다는 것을 알리듯, 서버에서도 클라이언트에게 존재를 알리고 패킷을 보낼 수 있다는 신호를 보내야한다. 그렇기 때문에 2-way-handshake로는 부족하다.</p>
+<p><a href="https://asfirstalways.tistory.com/356">3-way-handshake 출처 : https://asfirstalways.tistory.com/356</a></p>
+<h3 id="dns-round-robin-방식" style="position:relative;"><a href="#dns-round-robin-%EB%B0%A9%EC%8B%9D" aria-label="dns round robin 방식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DNS Round Robin 방식</h3>
+<ul>
+<li>
+<p>DNS Round Robin이란, 별도의 소프트웨어 혹은 하드웨어 로드밸런싱 장비를 사용하지 않고 DNS만을 이용하여 도메인 레코드 정보를 조회하는 시점에서 트래픽을 분산하는 기법이다.</p>
+</li>
+<li>
+<p>웹서버로 예를 들자면, 웹 서비스를 담당할 여러 대의 웹 서버는 자신의 공인 IP를 가지고 있다. 웹 사이트에 접속을 원하는 사용자가 해당 도메인 주소를 브라우저에 입력하면, DNS는 도메인의 정보를 조회하는데, 이때 IP 주소를 여러 대의 서버 IP 리스트 중에서도 라운드 로빈형태로 랜덤하게 하나 혹은 여러개를 선택하여 다시 사용자에게 알려준다. 결과적으로 웹 사이트에 접속하는 다수의 사용자는 실제로는 복수의 웹 서버에 나뉘에 접속하게 되면서 자연스럽게 서버의 부하가 분산되는 방식인 것이다.</p>
+</li>
+</ul>
+<h4 id="dns-round-robin-방식의-문제점" style="position:relative;"><a href="#dns-round-robin-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90" aria-label="dns round robin 방식의 문제점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DNS Round Robin 방식의 문제점</h4>
+<ol>
+<li>
+<p>부하 분산을 위해 서버의 대수를 늘리기 위해서는 그만큼의 공인 Ip주소가 필요하다.</p>
+</li>
+<li>
+<p>균등하게 분산되지 않는다. 이것은 모바일 사이트 등에서 문제가 될 수 있는데, 스마트폰의 접속은 캐리어 게이트웨이라고 하는 프록시 서버를 경유한다. 프록시 서버에서는 이름변환 결과가 일정 시간 동안 캐싱되므로, 같은 프록시 서버를 경유하는 접속은 항상 같은 서버로 접속된다. 또한 PC용 웹브라우저도 DNS 질의 결과를 캐싱하기 때문에, 균등하게 부하분산되지 않는다. DNS 레코드의 TTL 값을 짧게 설정함으로써 어느정도 해소가 되지만, TTL에 따라 캐시를 해제하는 것은 아니므로 주의가 필요하다.<br>
+<em>TTL(time-to-live) : 패킷이 라우터에서 폐기되기 전에 네트워크 내에서 존재하도록 설정된 시간 또는 홉(hop : 소스와 목적지 간의 경로)</em></p>
+</li>
+<li>
+<p>서버가 다운 되어도 확인이 불가능하다. DNS서버는 웹 서버의 부하나 접속 수 등의 상황에 따라 질의결과를 제어할 수가 없다. 웹서버의 부하가 높아서 응답이 느려지거나 접속수가 꽉 차서 접속을 처리할 수 없는 상황인지를 전혀 감지할 수가 없기 때문에, 어떤 원인으로 다운이 되더라도 이를 검출하지 못하고 유저들에게 제공한다. 이때문에 유저들은 간혹 다운된 서버로 연결이 되기도 한다. DNS Round Robin은 어디까지나 부하분산을 위한 방법이지, 다중화 방법은 아니므로 다른 S/W와 조합해서 관리할 필요가 있다.</p>
+</li>
+</ol>
+<h4 id="문제점-해소-기법" style="position:relative;"><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90-%ED%95%B4%EC%86%8C-%EA%B8%B0%EB%B2%95" aria-label="문제점 해소 기법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>문제점 해소 기법</h4>
+<p>Round Robin 방식을 기반으로, 단점을 해소하는 DNS 스케줄링 알고리즘이 존재한다(일부만 소개)</p>
+<h5>Weighted Round Robin(WRR)</h5>
+<p>각각의 웹 서버에 가중치를 가미해서 분산 비율을 변경한다. 물론 가중치가 큰 서버일수록 빈번하게 선택되므로 처리 능력이 높은 서버는 가중치를 높게 설정하는 것이 좋다.</p>
+<h5>Least Connection</h5>
+<p>접속 클라이언트 수가 가장 적은 서버를 선택한다. 로드밸런서에서 실시간으로 connection 수를 관리하거나, 각 서버에서 주기적으로 알려주는 것이 필요하다.</p>
+<h3 id="웹-통신의-큰-흐름---우리가-chrome을-실행시켜-주소창에-특정-url값을-입력시키면-어떤-일이-일어날까" style="position:relative;"><a href="#%EC%9B%B9-%ED%86%B5%EC%8B%A0%EC%9D%98-%ED%81%B0-%ED%9D%90%EB%A6%84---%EC%9A%B0%EB%A6%AC%EA%B0%80-chrome%EC%9D%84-%EC%8B%A4%ED%96%89%EC%8B%9C%EC%BC%9C-%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90-%ED%8A%B9%EC%A0%95-url%EA%B0%92%EC%9D%84-%EC%9E%85%EB%A0%A5%EC%8B%9C%ED%82%A4%EB%A9%B4-%EC%96%B4%EB%96%A4-%EC%9D%BC%EC%9D%B4-%EC%9D%BC%EC%96%B4%EB%82%A0%EA%B9%8C" aria-label="웹 통신의 큰 흐름   우리가 chrome을 실행시켜 주소창에 특정 url값을 입력시키면 어떤 일이 일어날까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹 통신의 큰 흐름 - 우리가 chrome을 실행시켜 주소창에 특정 URL값을 입력시키면 어떤 일이 일어날까?</h3>
+<h4 id="in-브라우저" style="position:relative;"><a href="#in-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80" aria-label="in 브라우저 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>in 브라우저</h4>
+<ol>
+<li>url에 입력된 값을 브라우저 내부에서 결정된 규칙에 따라 그 의미를 조사한다.</li>
+<li>조사된 의미에 따라 HTTP Request 메시지를 만든다.</li>
+<li>만들어진 메시지를 웹 서버로 전송한다.</li>
+</ol>
+<p>이때 만들어진 메시지 전송은 브라우저가 직접 하는 것이 아니다. 브라우저는 메시지를 네트워크에 송출하는 기능이 없으므로 OS에 의뢰하여 메시지를 전달한다. 우리가 택배를 보낼 때 직접 보내는 게 아니라, 이미 서비스가 이루어지고 있는 택배 시스템을 이용하여 보내는 것과 같은 이치이다. 단, OS에 송신을 의뢰할 때는 도메인 명이 아니라 IP주소로 메시지를 받을 상대를 지정해야 하는데, 이 과정에서 DNS서버를 조회해야 한다.</p>
+<h4 id="in-프로토콜-스택-lan-어댑터" style="position:relative;"><a href="#in-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-%EC%8A%A4%ED%83%9D-lan-%EC%96%B4%EB%8C%91%ED%84%B0" aria-label="in 프로토콜 스택 lan 어댑터 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>in 프로토콜 스택, LAN 어댑터</h4>
+<ol>
+<li>프로토콜 스택(운영체제에 내장된 네트워크 제어용 소프트웨어)이 브라우저로부터 메시지를 받는다.</li>
+<li>브라우저로부터 받은 메시지를 패킷 속에 저장한다.</li>
+<li>수신처 주소 등의 제어정보를 덧붙인다.</li>
+<li>패킷을 LAN어댑터에 넘긴다.</li>
+<li>LAN 어댑터는 다음 Hop의 MAC주소를 붙인 프레임을 전기신호로 변환시킨다.</li>
+<li>신호를 LAN케이블에 송출시킨다.</li>
+</ol>
+<p>프로토콜 스택은 통신 중 오류가 발생했을 때, 이 제어 정보를 사용하여 고쳐 보내거나, 각종 상황을 조절하는 등의 다양한 역할을 하게 된다. 네트워크 세계에서는 비서가 있어서 우리가 비서에게 물건만 건네주면, 받는 사람의 주소와 각종 유의사항을 써준다. 여기서는 프로토콜 스택이 비서의 역할을 한다고 볼 수 있다.</p>
+<h4 id="in-허브-스위치-라우터" style="position:relative;"><a href="#in-%ED%97%88%EB%B8%8C-%EC%8A%A4%EC%9C%84%EC%B9%98-%EB%9D%BC%EC%9A%B0%ED%84%B0" aria-label="in 허브 스위치 라우터 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>in 허브, 스위치, 라우터</h4>
+<ol>
+<li>LAN 어댑터가 송신한 프레임은 스위칭 허브를 경유하여 인터넷 접속용 라우터에 도착한다.</li>
+<li>라우터는 패킷을 프로바이더(통신사)에게 전달한다.</li>
+<li>인터넷으로 들어가게 된다.</li>
+</ol>
+<h4 id="in-액세스-회선-프로바이더" style="position:relative;"><a href="#in-%EC%95%A1%EC%84%B8%EC%8A%A4-%ED%9A%8C%EC%84%A0-%ED%94%84%EB%A1%9C%EB%B0%94%EC%9D%B4%EB%8D%94" aria-label="in 액세스 회선 프로바이더 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>in 액세스 회선, 프로바이더</h4>
+<ol>
+<li>패킷은 인터넷의 입구에 있는 액세스 회선(통신 회선)에 의해 POP(point of presence, 통신사용 라우터)까지 운반된다.</li>
+<li>POP를 거쳐 인터넷의 핵심부로 들어가게 된다.</li>
+<li>수 많은 고속 라우터들 사이로 패킷이 목적지를 향해 흘러가게 된다.</li>
+</ol>
+<h4 id="in-방화벽-캐시서버" style="position:relative;"><a href="#in-%EB%B0%A9%ED%99%94%EB%B2%BD-%EC%BA%90%EC%8B%9C%EC%84%9C%EB%B2%84" aria-label="in 방화벽 캐시서버 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>in 방화벽, 캐시서버</h4>
+<ol>
+<li>패킷은 인터넷 핵심부를 통과하여 웹 서버측의 LAN에 도착한다.</li>
+<li>기다리고 있던 방화벽이 도착한 패킷을 검사한다.</li>
+<li>패킷이 웹 서버까지 가야하는지 가지 않아도 되는지를 판단하는 캐시 서버가 존재한다.</li>
+</ol>
+<p>굳이 서버까지 가지 않아도 되는 경우를 골라낸다. 액세스한 페이지의 데이터가 캐시서버에 있으면, 웹 서버에 의뢰하지 않고 바로 그 값을 읽을 수 있다. 페이지의 데이터 중에 다시 이용할 수 있는 것이 있으면 캐시 서버에 저장된다.</p>
+<h4 id="in-웹서버" style="position:relative;"><a href="#in-%EC%9B%B9%EC%84%9C%EB%B2%84" aria-label="in 웹서버 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>in 웹서버</h4>
+<ol>
+<li>패킷이 물리적인 웹 서버에 도착하면 웹 서버의 프로토콜 스택은 패킷을 추출하여 메시지를 복원하고 웹 서버 애플리케이션에 넘긴다.</li>
+<li>메시지를 받은 웹 서버 애플리케이션은 요청 메시지에 따른 데이터를 응답 메시지에 넣어 클라이언트로 회송한다.</li>
+<li>왔던 방식대로 응답 메시지가 클라이언트에게 전송된다.</li>
+</ol>
+<!-- ## 운영체제
 ## 데이터베이스
 ## 알고리즘
 
@@ -685,6 +855,92 @@
 <li><a href="#prim-algorithm">Prim algorithm</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#1-3-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC">1-3. 네트워크</a></p>
+<ul>
+<li>
+<p><a href="#http%EC%9D%98-get%EA%B3%BC-post-%EB%B9%84%EA%B5%90">HTTP의 GET과 POST 비교</a></p>
+<ul>
+<li><a href="#get">GET</a></li>
+<li><a href="#post">POST</a></li>
+<li><a href="#%EB%B9%84%EA%B5%90">비교</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#http%EC%99%80-https">HTTP와 HTTPS</a></p>
+<ul>
+<li>
+<p><a href="#http%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90">HTTP의 문제점</a></p>
+<ul>
+<li>
+<p><a href="#tcpip%EB%8A%94-%EB%8F%84%EC%B2%AD%EC%9D%B4-%EA%B0%80%EB%8A%A5%ED%95%9C-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9D%B4%EB%8B%A4">TCP/IP는 도청이 가능한 네트워크이다.</a></p>
+<ul>
+<li><a href="#%EB%B3%B4%EC%95%88-%EB%B0%A9%EB%B2%95">보안 방법</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%ED%86%B5%EC%8B%A0-%EC%83%81%EB%8C%80%EB%A5%BC-%ED%99%95%EC%9D%B8%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0-%EB%95%8C%EB%AC%B8%EC%97%90-%EC%9C%84%EC%9E%A5%EC%9D%B4-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4">통신 상대를 확인하지 않기 때문에 위장이 가능하다.</a></p>
+<ul>
+<li><a href="#%EB%B3%B4%EC%95%88-%EB%B0%A9%EB%B2%95-1">보안 방법</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%99%84%EC%A0%84%EC%84%B1%EC%9D%84-%EC%A6%9D%EB%AA%85%ED%95%A0-%EC%88%98-%EC%97%86%EA%B8%B0-%EB%95%8C%EB%AC%B8%EC%97%90-%EB%B3%80%EC%A1%B0%EA%B0%80-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4">완전성을 증명할 수 없기 때문에 변조가 가능하다.</a></p>
+<ul>
+<li><a href="#%EB%B3%B4%EC%99%84-%EB%B0%A9%EB%B2%95">보완 방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#https">HTTPS</a></p>
+<ul>
+<li><a href="#%EB%AA%A8%EB%93%A0-%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C-https%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%8F%84-%EB%90%A0%EA%B9%8C">모든 웹 페이지에서 HTTPS를 사용해도 될까?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#tcp%EC%99%80-udp">TCP와 UDP</a></p>
+<ul>
+<li><a href="#udpuser-datagram-protocol-%EC%82%AC%EC%9A%A9%EC%9E%90-%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C">UDP(User Datagram Protocol, 사용자 데이터그램 프로토콜)</a></li>
+<li><a href="#tcptransmission-control-protocol-%EC%A0%84%EC%86%A1-%EC%A0%9C%EC%96%B4-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C">TCP(Transmission Control Protocol, 전송 제어 프로토콜)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#3-way-handshake">3-way-handshake</a></p>
+<ul>
+<li><a href="#%EC%99%9C-3-way%EC%9D%B8%EA%B0%80-2-way%EB%A1%9C%EB%8A%94-%EC%B6%A9%EB%B6%84%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80%EA%B0%80">왜 3-way인가? 2-way로는 충분하지 않은가?</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#dns-round-robin-%EB%B0%A9%EC%8B%9D">DNS Round Robin 방식</a></p>
+<ul>
+<li>
+<p><a href="#dns-round-robin-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90">DNS Round Robin 방식의 문제점</a></p>
+</li>
+<li>
+<p><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90-%ED%95%B4%EC%86%8C-%EA%B8%B0%EB%B2%95">문제점 해소 기법</a></p>
+<ul>
+<li><a href="#weighted-round-robinwrr">Weighted Round Robin(WRR)</a></li>
+<li><a href="#least-connection">Least Connection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%9B%B9-%ED%86%B5%EC%8B%A0%EC%9D%98-%ED%81%B0-%ED%9D%90%EB%A6%84---%EC%9A%B0%EB%A6%AC%EA%B0%80-chrome%EC%9D%84-%EC%8B%A4%ED%96%89%EC%8B%9C%EC%BC%9C-%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90-%ED%8A%B9%EC%A0%95-url%EA%B0%92%EC%9D%84-%EC%9E%85%EB%A0%A5%EC%8B%9C%ED%82%A4%EB%A9%B4-%EC%96%B4%EB%96%A4-%EC%9D%BC%EC%9D%B4-%EC%9D%BC%EC%96%B4%EB%82%A0%EA%B9%8C">웹 통신의 큰 흐름 - 우리가 chrome을 실행시켜 주소창에 특정 URL값을 입력시키면 어떤 일이 일어날까?</a></p>
+<ul>
+<li><a href="#in-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80">in 브라우저</a></li>
+<li><a href="#in-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-%EC%8A%A4%ED%83%9D-lan-%EC%96%B4%EB%8C%91%ED%84%B0">in 프로토콜 스택, LAN 어댑터</a></li>
+<li><a href="#in-%ED%97%88%EB%B8%8C-%EC%8A%A4%EC%9C%84%EC%B9%98-%EB%9D%BC%EC%9A%B0%ED%84%B0">in 허브, 스위치, 라우터</a></li>
+<li><a href="#in-%EC%95%A1%EC%84%B8%EC%8A%A4-%ED%9A%8C%EC%84%A0-%ED%94%84%EB%A1%9C%EB%B0%94%EC%9D%B4%EB%8D%94">in 액세스 회선, 프로바이더</a></li>
+<li><a href="#in-%EB%B0%A9%ED%99%94%EB%B2%BD-%EC%BA%90%EC%8B%9C%EC%84%9C%EB%B2%84">in 방화벽, 캐시서버</a></li>
+<li><a href="#in-%EC%9B%B9%EC%84%9C%EB%B2%84">in 웹서버</a></li>
 </ul>
 </li>
 </ul>
