@@ -130,7 +130,7 @@
 <li>
 <p>다익스트라 알고리즘 간단한 구현 방법</p>
 <ul>
-<li>단계마다 방문하지 않은 노드 중에서 최단 거리가 가장 짧은 노드를 선택하기 위해 **매 단계마다 1차원 테이블의 모든 원소를 확인(순차 탐색)**한다.</li>
+<li>단계마다 방문하지 않은 노드 중에서 최단 거리가 가장 짧은 노드를 선택하기 위해 <strong>매 단계마다 1차원 테이블의 모든 원소를 확인(순차 탐색)</strong> 한다.</li>
 </ul>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> sys
 <span class="token builtin">input</span> <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline
@@ -218,7 +218,7 @@ dijkstra<span class="token punctuation">(</span>start<span class="token punctuat
 <p>힙(Heap)</p>
 <ul>
 <li><u>우선순위 큐(Priority Queue)를 구현하기 위해 사용하는 자료구조 중 하나</u>이다.</li>
-<li>**최소 힙(Min Heap)**과 **최대 힙(Max Heap)**이 있다.</li>
+<li><strong>최소 힙(Min Heap)</strong> 과 <strong>최대 힙(Max Heap)</strong> 이 있다.</li>
 <li>다익스트라 최단 경로 알고리즘을 포함해 다양한 알고리즘에 사용된다.</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/71132893/103743679-eb8d4d80-503f-11eb-9c1c-6f44b803c3e6.png" alt="image"></p>
@@ -341,7 +341,7 @@ dijkstra<span class="token punctuation">(</span>start<span class="token punctuat
 <ul>
 <li>개선된 구현 방법 성능 분석
 <ul>
-<li>힙 자료구조를 이용하는 다익스트라 알고리즘의 시간 복잡도는 *O(ElogV)*이다.</li>
+<li>힙 자료구조를 이용하는 다익스트라 알고리즘의 시간 복잡도는 <em>O(ElogV)</em> 이다.</li>
 <li>노드를 하나씩 꺼내 검사하는 반복문(while문)은 노드의 개수 V 이상의 횟수로는 처리되지 않는다.
 <ul>
 <li>결과적으로 현재 우선순위 큐에서 꺼낸 노드와 연결된 다른 노드들을 확인하는 총횟수는 최대 간선의 개수(E)만큼 연산이 수행될 수 있다.</li>
@@ -349,8 +349,8 @@ dijkstra<span class="token punctuation">(</span>start<span class="token punctuat
 </li>
 <li>직관적으로 <u>전체 과정은 E개의 원소를 우선순위 큐에 넣었다가 모두 빼내는 연산과 매우 유사</u>하다.
 <ul>
-<li>시간 복잡도를 *O(ElogE)*로 판단할 수 있다.</li>
-<li>중복 간선을 포함하지 않은 경우에 이를 *O(ElogV)*로 정리할 수 있다.
+<li>시간 복잡도를 <em>O(ElogE)</em> 로 판단할 수 있다.</li>
+<li>중복 간선을 포함하지 않은 경우에 이를 <em>O(ElogV)</em> 로 정리할 수 있다.
 <ul>
 <li><em>O</em>(<em>ElogE</em>) -> <em>O</em>(<em>ElogV<sup>2</sup></em>) -> <em>O</em>(<em>2ElogV</em>) -> <em>O</em>(<em>ElogV</em>)</li>
 </ul>
