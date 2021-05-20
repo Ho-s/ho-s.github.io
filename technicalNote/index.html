@@ -1232,12 +1232,176 @@ ERROR <span class="token number">1213</span> <span class="token punctuation">(</
 <p>대부분의 컬럼 모델 NoSQL은 쓰기와 읽기 중에 쓰기에 더 특화되어 있다. 데이터를 먼저 커밋로그와 메모리에 저장한 후에 응답하기 때문에 빠른 응답속도를 제공한다. 그렇기 때문에 읽기 연산 대비 쓰기 연산이 많은 서비스나 빠른 시간 안에 대량의 데이터를 입력하고 조회하는 서비스를 구현할 때 가장 좋은 성능을 보인다. 채팅 내용 저장, 실시간 분석을 위한 데이터 저장소 등의 서비스 구현에 적합하다.</p>
 <h1 id="2-javascript" style="position:relative;"><a href="#2-javascript" aria-label="2 javascript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. JavaScript</h1>
 <h2 id="js-event-loop" style="position:relative;"><a href="#js-event-loop" aria-label="js event loop permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JS Event Loop</h2>
+<ul>
+<li><a href="https://asfirstalways.tistory.com/362">JavaScript 이벤트 루프에 대해서</a></li>
+<li><a href="http://sculove.github.io/blog/2018/01/18/javascriptflow/">자바스크립트의 비동기 처리 과정</a></li>
+</ul>
 <h2 id="hoisting" style="position:relative;"><a href="#hoisting" aria-label="hoisting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hoisting</h2>
+<p><em>Javascript라는 언어의 특성을 가장 잘 보여주는 특성 중 하나지만, ES6 문법이 표준화되면서 크게 문제가 되지 않게 되었다.</em></p>
+<h3 id="정의-1" style="position:relative;"><a href="#%EC%A0%95%EC%9D%98-1" aria-label="정의 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>정의</h3>
+<p><code class="language-text">hoist</code>라는 단어의 사전적 정의는 끌어올리기 라는 뜻이다. 자바스크립트에서 끌어올려지는 것은 변수이다. <code class="language-text">var</code> keyword로 선언된 모든 변수 선언은 호이스트된다. 호이스트란 변수의 정의가 그 범위에 따라 <code class="language-text">선언</code>과 <code class="language-text">할당</code>으로 분리되는 것을 의미한다. 즉, 변수가 함수 내에서 정의되었을 경우, 선언이 함수의 최상위로, 함수 바깥에서 정의되었을 경우, 전역 컨텍스트의 최상위로 변경이된다.</p>
+<p>우선, 선언(Declaration)과 할당(Assignment)을 이해해야 한다. 끌어올려지는 것은 선언이다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+    <span class="token keyword">var</span> x <span class="token operator">=</span><span class="token number">100</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">//100</span>
+<span class="token punctuation">}</span>
+<span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>다른 언어의 경우엔, 변수 x를 선언하지 않고 출력하려 한다면 오류를 발생시킬 것이다. 하지만 자바스크립트에서는 <code class="language-text">undefined</code>라고 하고 넘어간다. <code class="language-text">var x = 100</code> 이 구문에서 <code class="language-text">var x</code>를 호이스트하기 때문이다. 즉, 작동 순서에 맞게 코드를 재구성하면 다음과 같다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> x
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+    <span class="token keyword">var</span> x <span class="token operator">=</span><span class="token number">100</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">//100</span>
+<span class="token punctuation">}</span>
+<span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>선언문은 항시 자바스크립트 엔진 구동 시에 가장 최우선으로 해석하므로 호이스팅되고, <code class="language-text">할당 구문은 런타임 과정에서 이루어지기 때문에</code> 호이스팅되지 않는다.</p>
+<p>함수가 자신이 위치한 코드에 상관없이 함수 선언문 형태로 정의한 함수의 유호 범위는 전체 코드의 맨 처음부터 시작한다. 함수 선언이 함수 실행 부분보다 뒤에 있더라도 자바스크립트 엔진이 함수 선언을 끌어올리는 것을 의미한다. 함수 호이스팅은 함수를 끌어올리지만 변수의 값을 끌어올리지 않는다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// console > hello</span></code></pre></div>
+<p>foo 함수에 대한 선언을 호이스팅하여 global 객체에 등록시키기 때문에 hello가 제대로 출력된다</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// console > Uncaught TypeError: foo is not a functiuon</span></code></pre></div>
+<p>두 번째 예제의 함수 표현은 함수 리터럴을 할당하는 구조이기 때문에 호이스팅되지 않으며 그렇기 때문에 런타임환경에서 <code class="language-text">Type Error</code>을 발생시킨다.</p>
 <h2 id="closure" style="position:relative;"><a href="#closure" aria-label="closure permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Closure</h2>
+<p>Closure(클로저)는 두 개의 함수로 구성된 환경에서 이루어진 특별한 객체의 한 종류이다. 여기서 환경이라 함은 클로저가 생성될 때 그 범위에 있던, 여러 지역 변수들이 포함된 <code class="language-text">context</code>를 말한다. 이 클로저를 통해서 자바스크립트에는 없는 비공개(Private) 속성/메소드, 공개 속성/메소드를 구현할 수 있는 방안을 마련할 수 있다.</p>
+<h3 id="클로저-생성하기" style="position:relative;"><a href="#%ED%81%B4%EB%A1%9C%EC%A0%80-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="클로저 생성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>클로저 생성하기</h3>
+<p>다음은 클로저가 생성되는 조건이다.</p>
+<ol>
+<li>내부 함수가 익명 함수로 되어 외부 함수의 반환값으로 사용된다.</li>
+<li>내부 함수는 외부 함수의 실행 환경(execution envirionment)에서 실행된다.</li>
+<li>내부 함수에서 사용되는 변수 X는 외부 함수의 변수 스코프에 있다.</li>
+</ol>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">closure</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> closure</span></code></pre></div>
+<p><code class="language-text">outer</code>함수를 실행시키는 <code class="language-text">context</code>에는 <code class="language-text">name</code>이라는 변수가 존재하지 않는다는 것을 확인할 수 있다. 비슷한 맥락에서 코드를 조금 변경해볼 수 있다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Warning</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">closure</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> callFunc <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">callFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> closure</span></code></pre></div>
+<p>위 코드에서 <code class="language-text">callFunc</code>를 클로저라고 한다. <code class="language-text">callFunc</code> 호출에 의해 <code class="language-text">name</code>이라는 값이 console에 찍히는데, 찍히는 값은 <code class="language-text">warning</code>이 아니라 <code class="language-text">closure</code>이라는 값이다. 즉, <code class="language-text">outer</code> 함수의 <code class="language-text">context</code>에 속해있는 변수를 참조하라는 것이다. 여기서 <code class="language-text">outer</code>함수의 지역변수로 존재하는 <code class="language-text">name</code> 변수를 <code class="language-text">free variable(자유 변수)</code>라고 한다.</p>
+<p>이처럼 외부 함수 호출이 종료되더라도 외부 함수의 지역 변수 및 변수 스코프 객체의 체인 관계를 유지할 수 있는 구조를 클로저라고 한다. 보다 정확히는 외부 함수에 의해 반환되는 내부 함수를 가리키는 말이다.</p>
 <h2 id="what-is-this" style="position:relative;"><a href="#what-is-this" aria-label="what is this permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>what is 'this'</h2>
+<p>자바스크립트에서 모든 함수는 실행될 때마다 함수 내부에 <code class="language-text">this</code>라는 객체가 추가된다. <code class="language-text">argument</code>라는 유사 배열 객체와 함께, 함수 내부로 암묵적으로 전달되는 것이다. 그렇기 때문에 자바스크립트에서의 <code class="language-text">this</code>는 함수가 호출된 상황에 따라 그 모습을 달리한다.</p>
+<h3 id="상황-1-객체의-메소드를-호출할-때" style="position:relative;"><a href="#%EC%83%81%ED%99%A9-1-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C%EB%A5%BC-%ED%98%B8%EC%B6%9C%ED%95%A0-%EB%95%8C" aria-label="상황 1 객체의 메소드를 호출할 때 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>상황 1. 객체의 메소드를 호출할 때</h3>
+<p><code class="language-text">객체의 포르퍼티가 함수일 경우</code> 메소드라고 부른다. <code class="language-text">this</code>는 함수를 실행할 때 함수를 소유하고 있는 객체(메소드를 포함하고 있는 인스턴스)를 참조한다. 즉, 해당 메소드를 호출한 객체로 바인딩된다. <code class="language-text">A.B</code>일 때, <code class="language-text">B</code>함수 내부에서의 <code class="language-text">this</code>는 <code class="language-text">A</code>를 가리키는 것이다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> myObject <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">"foo"</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">sayName</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+myObject<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> Object {name: "foo", sayName: sayName()}</span></code></pre></div>
+<h3 id="상황-2-함수를-호출할-때" style="position:relative;"><a href="#%EC%83%81%ED%99%A9-2-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%98%B8%EC%B6%9C%ED%95%A0-%EB%95%8C" aria-label="상황 2 함수를 호출할 때 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>상황 2. 함수를 호출할 때</h3>
+<p>특정 객체의 메소드가 아니라 함수를 호출하면, 해당 함수 내부 코드에서 사용된 <code class="language-text">this</code>는 전역객체에 바인딩된다. <code class="language-text">A.B</code>일 때, <code class="language-text">A</code>가 전역 객체가 되므로 <code class="language-text">B</code>함수 내부에서의 <code class="language-text">this</code>는 당연히 전역 객체에 바인딩되는 것이다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">func1</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func1's this.value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> <span class="token function-variable function">func2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func2's this.value </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">func2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+myObj<span class="token punctuation">.</span><span class="token function">func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> func1's this.value: 1</span>
+<span class="token comment">// console> func2's this.value: 100</span></code></pre></div>
+<h3 id="상황-3-생성자-함수를-통해-객체를-생성할-때" style="position:relative;"><a href="#%EC%83%81%ED%99%A9-3-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%B4-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EB%95%8C" aria-label="상황 3 생성자 함수를 통해 객체를 생성할 때 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>상황 3. 생성자 함수를 통해 객체를 생성할 때</h3>
+<p>그냥 함수를 호출하는 것이 아니라 <code class="language-text">new</code> 키워드를 통해 생성자 함수를 호출할 때는 또 <code class="language-text">this</code>가 다르게 바인딩된다. <code class="language-text">new</code> 키워드를 통해서 호출된 함수 내부에서의 <code class="language-text">this</code>는 객체 자신이 된다. 생성자 함수를 호출할 때의 <code class="language-text">this</code> 바인딩은 생성자 함수가 동작하는 방식을 통해 이해할 수 있다.</p>
+<p><code class="language-text">new</code>연산자를 통해 함수를 생성자로 호출하게 되면, 일단 빈 객체가 생성되고 <code class="language-text">this</code>가 바인딩된다. 이 객체는 함수를 통해 생성된 객체이며, 자신의 부모인 프로토타입 객체와 연결되어 있다. 그리고 return문이 명시되어 있지 않은 경우에는 <code class="language-text">this</code>로 바인딩된 새로 생성한 객체가 리턴된다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">Person</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Person</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// foo</span></code></pre></div>
+<h3 id="상황-4-apply-call-bind를-통한-호출" style="position:relative;"><a href="#%EC%83%81%ED%99%A9-4-apply-call-bind%EB%A5%BC-%ED%86%B5%ED%95%9C-%ED%98%B8%EC%B6%9C" aria-label="상황 4 apply call bind를 통한 호출 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>상황 4. apply, call, bind를 통한 호출</h3>
+<p>상황 1, 상황 2, 상황 3에 의존하지 않고 <code class="language-text">this</code>를 자바스크립트 코드로 주입 또는 설정할 수 있는 방법이다. 상황 2에서 사용했던 예제 코드를 다시 한 번 살펴보자. <code class="language-text">func2</code>를 호출할 때, <code class="language-text">func1</code>에서의 <code class="language-text">this</code>를 주입하기 위해서 위 세 가지 메소드를 사용할 수 있다. 그리고 세 메소드의 차이점을 파악하기 위해 <code class="language-text">func2</code>에 파라미터를 받을 수 있도록 수정한다.</p>
+<h4 id="code-classlanguage-textbindcode-메소드-사용" style="position:relative;"><a href="#code-classlanguage-textbindcode-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9" aria-label="code classlanguage textbindcode 메소드 사용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">bind</code> 메소드 사용</h4>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">func1</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func1's this.value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> <span class="token function-variable function">func2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val1<span class="token punctuation">,</span> val2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func2's this.value </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>val1<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>val2<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">param1</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">param2</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">func2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+myObj<span class="token punctuation">.</span><span class="token function">func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> func1's this.value: 1</span>
+<span class="token comment">// console> func2's this.value: 1 and param1 and param2</span></code></pre></div>
+<h4 id="code-classlanguage-textcallcode-메소드-사용" style="position:relative;"><a href="#code-classlanguage-textcallcode-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9" aria-label="code classlanguage textcallcode 메소드 사용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">call</code> 메소드 사용</h4>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">func1</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func1's this.value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> <span class="token function-variable function">func2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val1<span class="token punctuation">,</span> val2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func2's this.value </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>val1<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>val2<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">func2</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">param1</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">param2</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+myObj<span class="token punctuation">.</span><span class="token function">func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> func1's this.value: 1</span>
+<span class="token comment">// console> func2's this.value: 1 and param1 and param2</span></code></pre></div>
+<h4 id="code-classlanguage-textapplycode-메소드-사용" style="position:relative;"><a href="#code-classlanguage-textapplycode-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9" aria-label="code classlanguage textapplycode 메소드 사용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">apply</code> 메소드 사용</h4>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">func1</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func1's this.value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> <span class="token function-variable function">func2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val1<span class="token punctuation">,</span> val2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">func2's this.value </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>val1<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>val2<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">func2</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">param1</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">param2</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+myObj<span class="token punctuation">.</span><span class="token function">func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console> func1's this.value: 1</span>
+<span class="token comment">// console> func2's this.value: 1 and param1 and param2</span>
+</code></pre></div>
+<h4 id="code-classlanguage-textbindcode-vs-code-classlanguage-textapplycode-code-classlanguage-textcallcode" style="position:relative;"><a href="#code-classlanguage-textbindcode-vs-code-classlanguage-textapplycode-code-classlanguage-textcallcode" aria-label="code classlanguage textbindcode vs code classlanguage textapplycode code classlanguage textcallcode permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">bind</code> vs <code class="language-text">apply</code>, <code class="language-text">call</code></h4>
+<p>우선 <code class="language-text">bind</code>는 함수를 선언할 때, <code class="language-text">this</code>와 파라미터를 지정해줄 수 있으며, <code class="language-text">call</code>과 <code class="language-text">apply</code>는 함수를 호출할 때 <code class="language-text">this</code>와 파라미터를 지정해준다.</p>
+<h4 id="code-classlanguage-textapplycode-vs-bind-code-classlanguage-textcallcode" style="position:relative;"><a href="#code-classlanguage-textapplycode-vs-bind-code-classlanguage-textcallcode" aria-label="code classlanguage textapplycode vs bind code classlanguage textcallcode permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">apply</code> vs bind, <code class="language-text">call</code></h4>
+<p><code class="language-text">apply</code> 메소드에는 첫 번째 인자로 <code class="language-text">this</code>를 넘겨주고, 두 번째 인자로 넘겨줘야하는 파라미터를 배열의 형태로 전달한다. <code class="language-text">bind</code> 메소드와 <code class="language-text">call</code> 메소드는 각각의 파라미터를 하나씩 넘겨주는 형태이다.</p>
 <h2 id="promise" style="position:relative;"><a href="#promise" aria-label="promise permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promise</h2>
 <h2 id="ecma6" style="position:relative;"><a href="#ecma6" aria-label="ecma6 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECMA6</h2>
-<!-- ## 알고리즘
+<!--
 
 # 3. FrontEnd
 ## 브라우저의 작동 원리
@@ -1251,38 +1415,35 @@ ERROR <span class="token number">1213</span> <span class="token punctuation">(</
 ## CSS Methodology
 ## Normalize.css vs React.css
 ## 그 외 프론트엔드 개발 환경 관련
-## 추가자료들 -->
-<h1 id="면접" style="position:relative;"><a href="#%EB%A9%B4%EC%A0%91" aria-label="면접 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>면접</h1>
-<p><a href="https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C">https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C</a></p>
-<h2 id="중요한-면접-질문" style="position:relative;"><a href="#%EC%A4%91%EC%9A%94%ED%95%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8" aria-label="중요한 면접 질문 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>중요한 면접 질문</h2>
-<ul>
-<li>규모가 작을수록 리액트 등의 프레임워크에 대한 것을 물었고, 규모가 클 수록 자바스크립트나 웹브라우저같은 깊은 내용을 물었다.</li>
-<li>리액트 관련된 것을 물을 땐 virtual-DOM에 관한 건 꼭 물었고, 렌더링 최적화 관련해서 useMemo나 useCallback등 사용해서 최적화 하는 게 어떤 건지, re-rendering되는 게 어떤 건지 물었다.</li>
-</ul>
-<h3 id="자바스크립트-관련" style="position:relative;"><a href="#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B4%80%EB%A0%A8" aria-label="자바스크립트 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자바스크립트 관련</h3>
-<ul>
-<li>자바스크립트 실행컨텍스트에 관한 건 반드시 물어본다.</li>
-<li>this가 결정되는 것에 대해 묻고</li>
-<li>클로저에 관해서는 반드시 물어본다.</li>
-<li>이벤트루프에 관해서도 거의 물어본다. Event Bubbling, Capturing Delegation에 관해서도 많이 묻는다.</li>
-<li>promise객체에 관해 묻고, Async Await 예외처리에 까다로운 점에 대해 묻는다</li>
-<li>자바스크립트 원시값이 무엇이 있나요라고 묻는 곳도 있었다.</li>
-<li>자바크스크립트 가비지 컬렉션 알고리즘에 대해서 묻는 곳도 있었다.</li>
-</ul>
-<h3 id="웹브라우저-관련" style="position:relative;"><a href="#%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B4%80%EB%A0%A8" aria-label="웹브라우저 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹브라우저 관련</h3>
-<ul>
-<li>웹 브라우저에 <a href="http://www.google.com%EC%9D%84">www.google.com을</a> 치고 엔터를 누르면 일어나는 일에 대해 묻는다. <a href="https://www.google.com/search?q=what+happens+when+type+google&#x26;sxsrf=ALeKk00AIzB-CC-Xn_LS77NhQ_IYVLu6UA%3A1617619883416&#x26;ei=q-tqYPP7GMnFmAXNiYL4Aw&#x26;oq=what+happens+when+type&#x26;gs_lcp=Cgdnd3Mtd2l6EAMYADICCAAyBQgAEMsBMgUIABDLATIFCAAQywEyBQgAEMsBMgUIABDLATIFCAAQywEyBQgAEMsBMgUIABDLATIFCAAQywE6BwgjELADECc6BAgjECc6CAgAELEDEIMBOgUIABCxAzoHCCMQ6gIQJzoECAAQAzoGCCMQJxATOgQIABBDOgcIABCxAxBDOgQIABAKOgoIABCxAxCDARAKUIi4FViy3BVgmeIVaAJwAHgAgAF_iAGFFJIBBDEuMjOYAQCgAQGqAQdnd3Mtd2l6sAEKyAEBwAEB&#x26;sclient=gws-wiz">what happens when type google</a></li>
-<li>html css js가 브라우저에서 어떻게 렌더링되는지 거의 물어본다. 깊게 들어가면 repainting이나 reflow에 대한 것도 물어본다.</li>
-<li>display:none에서 어느정도까지 새로그리는지 묻는다.</li>
-<li>네이버나 카카오는 CS면접을 많이 묻기로 유명한데, 인턴연계형 채용면접에서는 거의 묻지 않았다.</li>
-</ul>
-<h3 id="프로젝트-관련" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A0%A8" aria-label="프로젝트 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 관련</h3>
-<ul>
-<li>프로젝트 질문은 대기업은 반드시 했고 스타트업은 안 하는 곳도 많았다.</li>
-<li>기술 사용한 이유에 대해 반드시 물어본다, 특히 상태관리 라이브러리 사용한 것 중 왜 그걸 택했는지, 차이는 뭔지 물어본다.</li>
-<li>팀프로젝트에서 힘들었던 것, 마찰이 있었을 때 극복한 방법, 동료가 어땠으면 좋겠는지 반드시 물어본다.</li>
-<li>date객체는 현실 시간과 차이가 있는데, 이때 moment 객체를 쓰면 이것을 보상할 수 있는데 이유가 무엇인가.</li>
-</ul></div><div class="contents"><ul>
+## 추가자료들
+
+ ## 알고리즘
+<!-- # 면접
+https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C
+## 중요한 면접 질문
+- 규모가 작을수록 리액트 등의 프레임워크에 대한 것을 물었고, 규모가 클 수록 자바스크립트나 웹브라우저같은 깊은 내용을 물었다.
+- 리액트 관련된 것을 물을 땐 virtual-DOM에 관한 건 꼭 물었고, 렌더링 최적화 관련해서 useMemo나 useCallback등 사용해서 최적화 하는 게 어떤 건지, re-rendering되는 게 어떤 건지 물었다.
+
+### 자바스크립트 관련
+- 자바스크립트 실행컨텍스트에 관한 건 반드시 물어본다.
+- this가 결정되는 것에 대해 묻고
+- 클로저에 관해서는 반드시 물어본다.
+- 이벤트루프에 관해서도 거의 물어본다. Event Bubbling, Capturing Delegation에 관해서도 많이 묻는다.
+- promise객체에 관해 묻고, Async Await 예외처리에 까다로운 점에 대해 묻는다
+- 자바스크립트 원시값이 무엇이 있나요라고 묻는 곳도 있었다.
+- 자바크스크립트 가비지 컬렉션 알고리즘에 대해서 묻는 곳도 있었다.
+
+### 웹브라우저 관련
+- 웹 브라우저에 www.google.com을 치고 엔터를 누르면 일어나는 일에 대해 묻는다. [what happens when type google](https://www.google.com/search?q=what+happens+when+type+google&sxsrf=ALeKk00AIzB-CC-Xn_LS77NhQ_IYVLu6UA%3A1617619883416&ei=q-tqYPP7GMnFmAXNiYL4Aw&oq=what+happens+when+type&gs_lcp=Cgdnd3Mtd2l6EAMYADICCAAyBQgAEMsBMgUIABDLATIFCAAQywEyBQgAEMsBMgUIABDLATIFCAAQywEyBQgAEMsBMgUIABDLATIFCAAQywE6BwgjELADECc6BAgjECc6CAgAELEDEIMBOgUIABCxAzoHCCMQ6gIQJzoECAAQAzoGCCMQJxATOgQIABBDOgcIABCxAxBDOgQIABAKOgoIABCxAxCDARAKUIi4FViy3BVgmeIVaAJwAHgAgAF_iAGFFJIBBDEuMjOYAQCgAQGqAQdnd3Mtd2l6sAEKyAEBwAEB&sclient=gws-wiz)
+- html css js가 브라우저에서 어떻게 렌더링되는지 거의 물어본다. 깊게 들어가면 repainting이나 reflow에 대한 것도 물어본다.
+- display:none에서 어느정도까지 새로그리는지 묻는다.
+- 네이버나 카카오는 CS면접을 많이 묻기로 유명한데, 인턴연계형 채용면접에서는 거의 묻지 않았다.
+
+### 프로젝트 관련
+- 프로젝트 질문은 대기업은 반드시 했고 스타트업은 안 하는 곳도 많았다.
+- 기술 사용한 이유에 대해 반드시 물어본다, 특히 상태관리 라이브러리 사용한 것 중 왜 그걸 택했는지, 차이는 뭔지 물어본다.
+- 팀프로젝트에서 힘들었던 것, 마찰이 있었을 때 극복한 방법, 동료가 어땠으면 좋겠는지 반드시 물어본다.
+- date객체는 현실 시간과 차이가 있는데, 이때 moment 객체를 쓰면 이것을 보상할 수 있는데 이유가 무엇인가. --></div><div class="contents"><ul>
 <li>
 <p><a href="#1-%EC%A0%84%EC%82%B0-%EA%B8%B0%EC%B4%88">1. 전산 기초</a></p>
 <ul>
@@ -1862,24 +2023,50 @@ ERROR <span class="token number">1213</span> <span class="token punctuation">(</
 <li>
 <p><a href="#2-javascript">2. JavaScript</a></p>
 <ul>
-<li><a href="#js-event-loop">JS Event Loop</a></li>
-<li><a href="#hoisting">Hoisting</a></li>
-<li><a href="#closure">Closure</a></li>
-<li><a href="#what-is-this">what is 'this'</a></li>
-<li><a href="#promise">Promise</a></li>
-<li><a href="#ecma6">ECMA6</a></li>
+<li>
+<p><a href="#js-event-loop">JS Event Loop</a></p>
+</li>
+<li>
+<p><a href="#hoisting">Hoisting</a></p>
+<ul>
+<li><a href="#%EC%A0%95%EC%9D%98-1">정의</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#%EB%A9%B4%EC%A0%91">면접</a></p>
+<p><a href="#closure">Closure</a></p>
+<ul>
+<li><a href="#%ED%81%B4%EB%A1%9C%EC%A0%80-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0">클로저 생성하기</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#what-is-this">what is 'this'</a></p>
 <ul>
 <li>
-<p><a href="#%EC%A4%91%EC%9A%94%ED%95%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8">중요한 면접 질문</a></p>
+<p><a href="#%EC%83%81%ED%99%A9-1-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C%EB%A5%BC-%ED%98%B8%EC%B6%9C%ED%95%A0-%EB%95%8C">상황 1. 객체의 메소드를 호출할 때</a></p>
+</li>
+<li>
+<p><a href="#%EC%83%81%ED%99%A9-2-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%98%B8%EC%B6%9C%ED%95%A0-%EB%95%8C">상황 2. 함수를 호출할 때</a></p>
+</li>
+<li>
+<p><a href="#%EC%83%81%ED%99%A9-3-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%B4-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EB%95%8C">상황 3. 생성자 함수를 통해 객체를 생성할 때</a></p>
+</li>
+<li>
+<p><a href="#%EC%83%81%ED%99%A9-4-apply-call-bind%EB%A5%BC-%ED%86%B5%ED%95%9C-%ED%98%B8%EC%B6%9C">상황 4. apply, call, bind를 통한 호출</a></p>
 <ul>
-<li><a href="#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B4%80%EB%A0%A8">자바스크립트 관련</a></li>
-<li><a href="#%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B4%80%EB%A0%A8">웹브라우저 관련</a></li>
-<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A0%A8">프로젝트 관련</a></li>
+<li><a href="#code-classlanguage-textbindcode-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9"><code class="language-text">bind</code> 메소드 사용</a></li>
+<li><a href="#code-classlanguage-textcallcode-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9"><code class="language-text">call</code> 메소드 사용</a></li>
+<li><a href="#code-classlanguage-textapplycode-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9"><code class="language-text">apply</code> 메소드 사용</a></li>
+<li><a href="#code-classlanguage-textbindcode-vs-code-classlanguage-textapplycode-code-classlanguage-textcallcode"><code class="language-text">bind</code> vs <code class="language-text">apply</code>, <code class="language-text">call</code></a></li>
+<li><a href="#code-classlanguage-textapplycode-vs-bind-code-classlanguage-textcallcode"><code class="language-text">apply</code> vs bind, <code class="language-text">call</code></a></li>
 </ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#promise">Promise</a></p>
+</li>
+<li>
+<p><a href="#ecma6">ECMA6</a></p>
 </li>
 </ul>
 </li>
