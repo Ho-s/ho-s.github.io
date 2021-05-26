@@ -1494,19 +1494,212 @@ materials<span class="token punctuation">.</span><span class="token function">ma
 </ul>
 <h1 id="3-frontend" style="position:relative;"><a href="#3-frontend" aria-label="3 frontend permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. FrontEnd</h1>
 <h2 id="브라우저의-작동-원리" style="position:relative;"><a href="#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EC%9E%91%EB%8F%99-%EC%9B%90%EB%A6%AC" aria-label="브라우저의 작동 원리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브라우저의 작동 원리</h2>
+<ol>
+<li>HTML 마크업을 처리하고 DOM 트리를 빌드한다.(<strong>"무엇을"</strong> 그릴지 결정한다.)</li>
+<li>CSS 마크업을 처리하고 CSSOM 트리를 빌드한다.(<strong>"어떻게"</strong> 그릴지 결정한다.)</li>
+<li>DOM 및 CSSOM을 결합하여 렌더링 트리를 형성한다.(<strong>"현재 화면에 그려질 것만</strong> 결정한다.)</li>
+<li>렌더링 트리에서 레이아웃을 실행하여 각 노드의 기하학적 형태를 계산한다.(**"Box-Model"**을 생성한다.)</li>
+<li>개별 노드를 화면에 페인트한다.(or 래스터화한다.)</li>
+</ol>
+<h3 id="reference-3" style="position:relative;"><a href="#reference-3" aria-label="reference 3 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h3>
+<ul>
+<li><a href="https://d2.naver.com/helloworld/59361">Naver D2 - 브라우저의 작동 원리</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=ko">Web fundamentals - Critical-rendering-path</a></li>
+<li><a href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=8431285&#x26;memberNo=34176766">브라우저의 Critical path (한글)</a></li>
+</ul>
 <h2 id="document-object-model" style="position:relative;"><a href="#document-object-model" aria-label="document object model permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Document Object Model</h2>
-<h3 id="event-bubbling-and-capturing" style="position:relative;"><a href="#event-bubbling-and-capturing" aria-label="event bubbling and capturing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Bubbling and Capturing</h3>
-<h3 id="event-delegation" style="position:relative;"><a href="#event-delegation" aria-label="event delegation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Delegation</h3>
-<h2 id="cors" style="position:relative;"><a href="#cors" aria-label="cors permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CORS</h2>
-<h2 id="ajax" style="position:relative;"><a href="#ajax" aria-label="ajax permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AJAX</h2>
+<p>웹에서는 수많은 이벤트(Event)가 발생하고 흐른다.</p>
+<ul>
+<li>브라우저(user agent)로부터 발생하는 이벤트</li>
+<li>사용자의 행동(interaction)에 의해 발생하는 이벤트</li>
+<li>DOM의 '변화'로 인해 발생하는 이벤트</li>
+</ul>
+<p>발생하는 이벤트는 그저 자바스크립트 객체일뿐이다. 브라우저의 Event Interface에 맞춰 구현된 객체인 것이다.</p>
+<p>여러 DOM Element로 구성된 하나의 웹 페이지는 Window를 최상위로 하는 트리를 생성하게 된다. 결론부터 말하자면 이벤트는 이벤트 각각이 갖게 되는 전파 경로(Propagation Path)를 따라 전파된다. 그리고 이 전파 경로는 DOM Tree 구조에서 Element의 위상(Hierarchy)에 의해 결정이 된다.</p>
+<h3 id="reference-4" style="position:relative;"><a href="#reference-4" aria-label="reference 4 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h3>
+<ul>
+<li><a href="https://jbee.io/web/about-event-in-the-web/">스펙 살펴보기: Document Object Model Event</a></li>
+</ul>
+<h2 id="cors교차-출처-리소스-공유-cross-origin-resource-sharing" style="position:relative;"><a href="#cors%EA%B5%90%EC%B0%A8-%EC%B6%9C%EC%B2%98-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EA%B3%B5%EC%9C%A0-cross-origin-resource-sharing" aria-label="cors교차 출처 리소스 공유 cross origin resource sharing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CORS(교차 출처 리소스 공유, Cross-Origin Resource Sharing)</h2>
+<p>다른 도메인으로부터 리소스가 요청될 경우 해당 리소스는 cross-origin HTTP 요청에 의해 요청된다. 하지만 대부분의 브라우저들은 보안 상의 이유로 스크립트에서의 cross-origin HTTP 요청을 제한한다. 이것을 <code class="language-text">Same-Origin-Policy(동일 근원 정책)</code>이라고 한다. 요청을 보내기 위해서는 요청을 보내고자 하는 대상과 프로토콜도 같아야하고, 포트도 같아야 함을 의미하다.(이 때, 서브 도메인 네임은 상관없다.)</p>
+<p>이러한 문제를 해결하기 위해 과거에는 flash를 proxy로 두고 서로 다른 도메인 간의 통신을 했다. 하지만 모바일 운영체제의 등장으로 flash로는 힘들어졌다.(ios는 전혀 플래시를 지원하지 않는다.) 대체제로 나온 기술이 <code class="language-text">JSONP(JSON-padding)</code>이다. jQuery v.1.2 이상부터 <code class="language-text">jsonp</code>형태가 지원되어 ajax를 호출할 때 타 도메인 간의 호출이 가능해졌다. <code class="language-text">JSONP</code>에는 타 도메인 간 자원을 공유할 수 있는 몇 가지 태그가 존재한다. 예를들어 <code class="language-text">img</code>, <code class="language-text">iFrame</code>, <code class="language-text">anchor</code>, <code class="language-text">script</code>, <code class="language-text">link</code> 등이 존재한다.</p>
+<p>여기서 <code class="language-text">CORS</code>는 타 도메인 간에 자원을 공유할 수 있게 해주는 것이다. <code class="language-text">Cross-Origin Resource Sharing</code> 표준은 웹 브라우저가 사용하는 정보를 읽을 수 있도록 허가된 출처 집합을 서버에게 알려주도록 허용하는 특정 HTTP 헤더를 추가함으로써 동작한다.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access-Control-Allow-Origin</td>
+<td>접근 가능한 <code class="language-text">url</code> 설정</td>
+</tr>
+<tr>
+<td>Access-Control-Allow-Credentials</td>
+<td>접근 가능한 <code class="language-text">쿠키</code> 설정</td>
+</tr>
+<tr>
+<td>Access-Control-Allow-Headers</td>
+<td>접근 가능한 <code class="language-text">헤더</code> 설정</td>
+</tr>
+<tr>
+<td>Access-Control-Allow-Methods</td>
+<td>접근 가능한 <code class="language-text">http method</code> 설정</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preflight-request" style="position:relative;"><a href="#preflight-request" aria-label="preflight request permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preflight Request</h3>
+<p>실제 요청을 보내도 안전한지 판단하기 위해 preflight 요청을 먼저 보내는 방법을 말한다. 즉, <code class="language-text">Preflight Request</code>는 실제 요청 전에 인증 헤더를 전송하여 서버의 허용 여부를 미리 체크하는 테스트 요청이다. 이 요청으로 트래픽이 증가할 수 있는데, 서버의 헤더 설정으로 캐쉬가 가능하다. 서버 측에서는 브라우저가 해당 도메인에서 CROS를 허용하는지 알아보기 위해서 preflight 요청을 보내는데, 이에 대한 처리가 필요하다. preflight요청은 HTTP의 <code class="language-text">OPTIONS</code> 메소드를 사용하며, <code class="language-text">Access-Control-Request-*</code>의 형태의 헤더로 전송한다.</p>
+<p>이는 브라우저가 강제하며 HTTP <code class="language-text">OPTION</code> 요청 메소드를 이용해 서버로부터 지원 중인 메소드들을 내려받은 뒤, 서버에서 <code class="language-text">approval(승인)</code> 시에 실제 HTTP 요청 메소드를 이용해 실제 요청을 전송하는 것이다.</p>
+<h3 id="reference-5" style="position:relative;"><a href="#reference-5" aria-label="reference 5 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/HTTP/CORS">MDN - HTTP 접근 제어 CORS</a></li>
+<li><a href="http://homoefficio.github.io/2015/07/21/Cross-Origin-Resource-Sharing/">Cross-Origin-Resource-Sharing 에 대해서</a></li>
+</ul>
+<h2 id="비동기-http-통신" style="position:relative;"><a href="#%EB%B9%84%EB%8F%99%EA%B8%B0-http-%ED%86%B5%EC%8B%A0" aria-label="비동기 http 통신 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>비동기 http 통신</h2>
+<p>JS에서 비동기 http 통신을 위한 방법은 대표적으로 3개(ajax, axios, fetch)가 있다.<br>
+여기서 비동기 방식이란 웹페이지를 리로드하지 않고 데이터를 불러오는 방식이다. 페이지 전체를 리로드 할 경우 전체 리소스를 다시 불러와야하기 때문에, 불필요한 리소스 낭비가 발생하게 되지만 비동기 방식을 이용할 경우 필요한 부분만 불러와 사용할 수 있으므로 효율적이다.</p>
+<h3 id="ajaxasynchronous-javascript-and-xml" style="position:relative;"><a href="#ajaxasynchronous-javascript-and-xml" aria-label="ajaxasynchronous javascript and xml permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AJAX(Asynchronous Javascript And Xml)</h3>
+<p>Ajax는 Asynchronous Javascript And Xml의 약자로, 비동기식 자바스크립트와 Xml이라는 의미이다.
+데이터를 이동하고 화면을 구성하는 데에 있어 화면 갱신 없이 필요한 데이터를 서버로 보내고 응답을 가져오는 방법이다.
+보통은 순수 JS보다 jQuery에서 많이 사용하며, web화면에서 무엇인가 부르거나 데이터를 조회하고 싶을 때 페이지 전체를 새로고침하고 싶지 않아서 사용한다.</p>
+<h4 id="데이터-형식" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%95%EC%8B%9D" aria-label="데이터 형식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터 형식</h4>
+<ol>
+<li>csv형식</li>
+</ol>
+<ul>
+<li><code class="language-text">,</code>로 데이터 속성을 나누고 줄바꿈으로 데이터를 나누는 방식</li>
+<li>장점 : 용량이 적다.</li>
+<li>단점 : 가독성이 떨어진다.</li>
+</ul>
+<ol start="2">
+<li>XML형식</li>
+</ol>
+<ul>
+<li>CSV형식의 가독성을 개선하기 위해 나온 형식으로, 속성과 데이터를 구분한다.</li>
+<li>장점 : CSV에 비해 가독성이 좋다.</li>
+<li>단점 : 용량이 크며, 데이터가 많아지면 분석력이 떨어진다.</li>
+</ul>
+<ol start="3">
+<li>JSON형식</li>
+</ol>
+<ul>
+<li>javascript 객체 형태로 데이터를 전송하며, 가장 많이 쓰이는 형식이다.</li>
+<li>장점 : 가독성도 좋고 용량도 적다.</li>
+<li>단점 : 여전히 데이터가 많아지면 분석력이 떨어진다.</li>
+</ul>
+<h4 id="데이터-전송-방식" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%86%A1-%EB%B0%A9%EC%8B%9D" aria-label="데이터 전송 방식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터 전송 방식</h4>
+<ol>
+<li>Create(생성) = Post</li>
+<li>Read(읽기) = GET</li>
+<li>Update(갱신) = PUT, PATCH</li>
+<li>Delete(삭제) = DELETE</li>
+</ol>
+<h3 id="axios" style="position:relative;"><a href="#axios" aria-label="axios permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Axios</h3>
+<p>Node.js와 브라우저를 위한 http 통신 라이브러리이다. fetch와는 달리 크로스 브라우징에 최적화되어 있어서 IE11까지 모조리 지원한다.(호환성에 중점) Promise를 지원하며, 편리하고 기능이 많아 몇몇 프론트 프레임워크에서는 사용을 권장한다.</p>
+<h4 id="장점" style="position:relative;"><a href="#%EC%9E%A5%EC%A0%90" aria-label="장점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>장점</h4>
+<ul>
+<li>구형 브라우저를 지원한다.</li>
+<li>응답시간 초과를 설정하는 방법이 있다.</li>
+<li>요청을 중단 시킬 수 있다.</li>
+<li>JSON 데이터 자동 변환이 가능하다.</li>
+<li>node.js에서의 사용이 가능하다.</li>
+<li>request aborting(요청 취소)가 가능하다.</li>
+<li>catch에 걸렸을 때, .then을 실행하지 않고, console창에 에러 로그를 보여준다.</li>
+<li>return 값은 Promise 객체 형태이다.</li>
+</ul>
+<h4 id="단점" style="position:relative;"><a href="#%EB%8B%A8%EC%A0%90" aria-label="단점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>단점</h4>
+<ul>
+<li>별도의 라이브러리 설치가 필요하다.</li>
+</ul>
+<h3 id="fetch" style="position:relative;"><a href="#fetch" aria-label="fetch permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>fetch</h3>
+<ul>
+<li>js 내장 라이브러리이기 때문에 import하지 않고 사용할 수 있다.</li>
+<li>네트워크 에러가 발생했을 때 기다려야 한다.(response timeout API 제공 X)</li>
+<li>지원하지 않는 브라우저가 있다.</li>
+<li>return 값은 Promise 객체 형태이다.</li>
+</ul>
+<h2 id="크로스-브라우징" style="position:relative;"><a href="#%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95" aria-label="크로스 브라우징 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>크로스 브라우징</h2>
+<p>웹 표준에 따라 개발을 하여 서로 다른 OS 또는 플랫폼에 대응하느는 것을 말한다. 즉, 브라우저의 렌더링 엔진이 다른 경우에 인터넷이 이상없이 구현되도록 하는 기술이다. 웹 사이트를 서로 비슷하게 만들어 어떤 환경에서도 이상없이 작동되게 하는 데에 그 목적이 있다. 즉, 어느 한쪽에 최적화되어 치우치지 않도록 공통요소를 사용하여 웹 페이지를 제작하는 방법을 말한다.</p>
+<h3 id="reference-6" style="position:relative;"><a href="#reference-6" aria-label="reference 6 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h3>
+<ul>
+<li><a href="https://asfirstalways.tistory.com/237">크로스 브라우징 이슈에 대응하는 프론트엔드 개발자들의 전략</a></li>
+</ul>
 <h2 id="웹-성능-관련된-issues" style="position:relative;"><a href="#%EC%9B%B9-%EC%84%B1%EB%8A%A5-%EA%B4%80%EB%A0%A8%EB%90%9C-issues" aria-label="웹 성능 관련된 issues permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹 성능 관련된 Issues</h2>
+<h3 id="네트워크-요청에-빠르게-응답하자" style="position:relative;"><a href="#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9A%94%EC%B2%AD%EC%97%90-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EC%9D%91%EB%8B%B5%ED%95%98%EC%9E%90" aria-label="네트워크 요청에 빠르게 응답하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>네트워크 요청에 빠르게 응답하자</h3>
+<ul>
+<li><code class="language-text">3.xx</code> 리다이렉트를 피할 것</li>
+<li><code class="language-text">meta-refresh</code> 사용 금지</li>
+<li><code class="language-text">CDN(content delivery network)</code>을 사용할 것</li>
+<li>동시 커넥션 수를 최소화 할 것</li>
+<li>커넥션을 재활용 할 것</li>
+</ul>
+<h3 id="자원을-최소한의-크기로-내려받자" style="position:relative;"><a href="#%EC%9E%90%EC%9B%90%EC%9D%84-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%ED%81%AC%EA%B8%B0%EB%A1%9C-%EB%82%B4%EB%A0%A4%EB%B0%9B%EC%9E%90" aria-label="자원을 최소한의 크기로 내려받자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자원을 최소한의 크기로 내려받자</h3>
+<ul>
+<li>777K</li>
+<li><code class="language-text">gzip</code> 압축을 사용할 것</li>
+<li><code class="language-text">HTML5 App cache</code>를 활용할 것</li>
+<li>자원을 캐시 가능하게 할 것</li>
+<li>조건 요청을 보낼 것</li>
+</ul>
+<h3 id="효율적인-마크업-구조를-구축하자" style="position:relative;"><a href="#%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EB%A7%88%ED%81%AC%EC%97%85-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EA%B5%AC%EC%B6%95%ED%95%98%EC%9E%90" aria-label="효율적인 마크업 구조를 구축하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>효율적인 마크업 구조를 구축하자</h3>
+<ul>
+<li>레거시 IE모드는 http헤더를 사용할 것</li>
+<li>@import의 사용을 피할 것</li>
+<li>inline 스타일과 embedded 스타일은 피할 것</li>
+<li>사용하는 스타일만 CSS에 포함시킬 것</li>
+<li>중복되는 코드를 최소화 할 것</li>
+<li>단일 프레임워크를 사용할 것</li>
+<li>Third Party 스크립트를 삽입하지 말 것</li>
+</ul>
+<h3 id="미디어-사용을-개선하자" style="position:relative;"><a href="#%EB%AF%B8%EB%94%94%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%9D%84-%EA%B0%9C%EC%84%A0%ED%95%98%EC%9E%90" aria-label="미디어 사용을 개선하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>미디어 사용을 개선하자</h3>
+<ul>
+<li>이미지 스프라이트를 사용할 것(하나의 이미지로, position만 바꿔서)</li>
+<li>실제 이미지 해상도를 사용할 것</li>
+<li>CSS3을 활용할 것</li>
+<li>하나의 작은 크기의 이미지는 DataURL을 사용할 것</li>
+<li>비디오의 미리보기 이미지를 만들 것</li>
+</ul>
+<h3 id="빠른-자바스크립트-코드를-작성하자" style="position:relative;"><a href="#%EB%B9%A0%EB%A5%B8-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EC%9E%90" aria-label="빠른 자바스크립트 코드를 작성하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>빠른 자바스크립트 코드를 작성하자</h3>
+<ul>
+<li>코드를 최소화할 것</li>
+<li>필요할 때만 스크립트를 가져올 것 : flag 사용</li>
+<li>DOM에 대한 접근을 최소화 할 것 : DOM manipulate는 느리다.</li>
+<li>다수의 엘리먼트를 찾을 때는 selector api를 사용할 것</li>
+<li>마크업의 변경은 한 번에 할 것 : temp 변수를 활용</li>
+<li>DOM의 크기를 작게 유지할 것</li>
+<li>내장 JSON 메소드를 활용할 것</li>
+</ul>
+<h3 id="애플리케이션의-작동원리를-알고있자" style="position:relative;"><a href="#%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%98-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC%EB%A5%BC-%EC%95%8C%EA%B3%A0%EC%9E%88%EC%9E%90" aria-label="애플리케이션의 작동원리를 알고있자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>애플리케이션의 작동원리를 알고있자.</h3>
+<ul>
+<li>Timer 사용에 유의할 것</li>
+<li><code class="language-text">requestAnimationFrame</code>을 사용할 것</li>
+<li>활성화될 때를 알고 있을 것</li>
+</ul>
+<h4 id="reference-7" style="position:relative;"><a href="#reference-7" aria-label="reference 7 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h4>
+<ul>
+<li><a href="https://www.slideshare.net/mixed/html5-50">HTML5 앱과 웹사이트를 보다 빠르게 하는 50 가지 - yongwoo Jeon</a></li>
+</ul>
 <h2 id="서버-사이드-렌더링-vs-클라이언트-사이드-렌더링" style="position:relative;"><a href="#%EC%84%9C%EB%B2%84-%EC%82%AC%EC%9D%B4%EB%93%9C-%EB%A0%8C%EB%8D%94%EB%A7%81-vs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%82%AC%EC%9D%B4%EB%93%9C-%EB%A0%8C%EB%8D%94%EB%A7%81" aria-label="서버 사이드 렌더링 vs 클라이언트 사이드 렌더링 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서버 사이드 렌더링 vs 클라이언트 사이드 렌더링</h2>
+<ul>
+<li><a href="http://asfirstalways.tistory.com/244">http://asfirstalways.tistory.com/244</a></li>
+</ul>
 <h2 id="css-methodology" style="position:relative;"><a href="#css-methodology" aria-label="css methodology permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS Methodology</h2>
+<p><code class="language-text">SMACSS</code>, <code class="language-text">OOCSS</code>, <code class="language-text">BEM</code>에 대해서 소개한다.</p>
+<h3 id="smacssscalable-and-modular-architecture-for-css" style="position:relative;"><a href="#smacssscalable-and-modular-architecture-for-css" aria-label="smacssscalable and modular architecture for css permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SMACSS(Scalable and Modular Architecture for CSS)</h3>
+<h3 id="oocssobject-oriented-css" style="position:relative;"><a href="#oocssobject-oriented-css" aria-label="oocssobject oriented css permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OOCSS(Object Oriented CSS)</h3>
+<h3 id="bemblock-element-modifier" style="position:relative;"><a href="#bemblock-element-modifier" aria-label="bemblock element modifier permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BEM(Block Element Modifier)</h3>
+<h4 id="reference-8" style="position:relative;"><a href="#reference-8" aria-label="reference 8 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h4>
+<ul>
+<li><a href="https://wit.nts-corp.com/2015/04/16/3538">CSS 방법론에 대해서</a></li>
+<li><a href="https://en.bem.info/">BEM</a></li>
+</ul>
 <h2 id="normalizecss-vs-reactcss" style="position:relative;"><a href="#normalizecss-vs-reactcss" aria-label="normalizecss vs reactcss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalize.css vs React.css</h2>
 <h2 id="그-외-프론트엔드-개발-환경-관련" style="position:relative;"><a href="#%EA%B7%B8-%EC%99%B8-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B4%80%EB%A0%A8" aria-label="그 외 프론트엔드 개발 환경 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>그 외 프론트엔드 개발 환경 관련</h2>
 <h2 id="추가자료들" style="position:relative;"><a href="#%EC%B6%94%EA%B0%80%EC%9E%90%EB%A3%8C%EB%93%A4" aria-label="추가자료들 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>추가자료들</h2>
 <!-- 
- ## 알고리즘
  # 면접
 https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C
 ## 중요한 면접 질문
@@ -2178,28 +2371,96 @@ https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%
 <ul>
 <li>
 <p><a href="#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EC%9E%91%EB%8F%99-%EC%9B%90%EB%A6%AC">브라우저의 작동 원리</a></p>
+<ul>
+<li><a href="#reference-3">Reference</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#document-object-model">Document Object Model</a></p>
 <ul>
-<li><a href="#event-bubbling-and-capturing">Event Bubbling and Capturing</a></li>
-<li><a href="#event-delegation">Event Delegation</a></li>
+<li><a href="#reference-4">Reference</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#cors">CORS</a></p>
+<p><a href="#cors%EA%B5%90%EC%B0%A8-%EC%B6%9C%EC%B2%98-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EA%B3%B5%EC%9C%A0-cross-origin-resource-sharing">CORS(교차 출처 리소스 공유, Cross-Origin Resource Sharing)</a></p>
+<ul>
+<li><a href="#preflight-request">Preflight Request</a></li>
+<li><a href="#reference-5">Reference</a></li>
+</ul>
 </li>
 <li>
-<p><a href="#ajax">AJAX</a></p>
+<p><a href="#%EB%B9%84%EB%8F%99%EA%B8%B0-http-%ED%86%B5%EC%8B%A0">비동기 http 통신</a></p>
+<ul>
+<li>
+<p><a href="#ajaxasynchronous-javascript-and-xml">AJAX(Asynchronous Javascript And Xml)</a></p>
+<ul>
+<li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%95%EC%8B%9D">데이터 형식</a></li>
+<li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%86%A1-%EB%B0%A9%EC%8B%9D">데이터 전송 방식</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#axios">Axios</a></p>
+<ul>
+<li><a href="#%EC%9E%A5%EC%A0%90-1">장점</a></li>
+<li><a href="#%EB%8B%A8%EC%A0%90-1">단점</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#fetch">fetch</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95">크로스 브라우징</a></p>
+<ul>
+<li><a href="#reference-6">Reference</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#%EC%9B%B9-%EC%84%B1%EB%8A%A5-%EA%B4%80%EB%A0%A8%EB%90%9C-issues">웹 성능 관련된 Issues</a></p>
+<ul>
+<li>
+<p><a href="#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9A%94%EC%B2%AD%EC%97%90-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EC%9D%91%EB%8B%B5%ED%95%98%EC%9E%90">네트워크 요청에 빠르게 응답하자</a></p>
+</li>
+<li>
+<p><a href="#%EC%9E%90%EC%9B%90%EC%9D%84-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%ED%81%AC%EA%B8%B0%EB%A1%9C-%EB%82%B4%EB%A0%A4%EB%B0%9B%EC%9E%90">자원을 최소한의 크기로 내려받자</a></p>
+</li>
+<li>
+<p><a href="#%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EB%A7%88%ED%81%AC%EC%97%85-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EA%B5%AC%EC%B6%95%ED%95%98%EC%9E%90">효율적인 마크업 구조를 구축하자</a></p>
+</li>
+<li>
+<p><a href="#%EB%AF%B8%EB%94%94%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%9D%84-%EA%B0%9C%EC%84%A0%ED%95%98%EC%9E%90">미디어 사용을 개선하자</a></p>
+</li>
+<li>
+<p><a href="#%EB%B9%A0%EB%A5%B8-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EC%9E%90">빠른 자바스크립트 코드를 작성하자</a></p>
+</li>
+<li>
+<p><a href="#%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%98-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC%EB%A5%BC-%EC%95%8C%EA%B3%A0%EC%9E%88%EC%9E%90">애플리케이션의 작동원리를 알고있자.</a></p>
+<ul>
+<li><a href="#reference-7">Reference</a></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p><a href="#%EC%84%9C%EB%B2%84-%EC%82%AC%EC%9D%B4%EB%93%9C-%EB%A0%8C%EB%8D%94%EB%A7%81-vs-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%82%AC%EC%9D%B4%EB%93%9C-%EB%A0%8C%EB%8D%94%EB%A7%81">서버 사이드 렌더링 vs 클라이언트 사이드 렌더링</a></p>
 </li>
 <li>
 <p><a href="#css-methodology">CSS Methodology</a></p>
+<ul>
+<li>
+<p><a href="#smacssscalable-and-modular-architecture-for-css">SMACSS(Scalable and Modular Architecture for CSS)</a></p>
+</li>
+<li>
+<p><a href="#oocssobject-oriented-css">OOCSS(Object Oriented CSS)</a></p>
+</li>
+<li>
+<p><a href="#bemblock-element-modifier">BEM(Block Element Modifier)</a></p>
+<ul>
+<li><a href="#reference-8">Reference</a></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p><a href="#normalizecss-vs-reactcss">Normalize.css vs React.css</a></p>
