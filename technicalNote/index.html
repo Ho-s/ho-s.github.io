@@ -1689,16 +1689,121 @@ materials<span class="token punctuation">.</span><span class="token function">ma
 <h2 id="css-methodology" style="position:relative;"><a href="#css-methodology" aria-label="css methodology permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS Methodology</h2>
 <p><code class="language-text">SMACSS</code>, <code class="language-text">OOCSS</code>, <code class="language-text">BEM</code>에 대해서 소개한다.</p>
 <h3 id="smacssscalable-and-modular-architecture-for-css" style="position:relative;"><a href="#smacssscalable-and-modular-architecture-for-css" aria-label="smacssscalable and modular architecture for css permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SMACSS(Scalable and Modular Architecture for CSS)</h3>
+<p><code class="language-text">SMACSS</code>의 핵심은 범주화(categorization)이며, 스타일을 다섯 가지 유형으로 분류하고 각 유형에 맞는 선택자(selector)와 작명법(naming convention)을 제시한다.</p>
+<ul>
+<li>기초(Base)
+<ul>
+<li>element 스타일의 default 값을 지정해주는 것이다. 선택자로는 요소 선택자를 사용한다.</li>
+</ul>
+</li>
+<li>레이아웃(Layout)
+<ul>
+<li>구성하고자 하는 페이지의 컴포넌트를 나누고 어떻게 위치해야하는지를 결정한다. <code class="language-text">id</code>는 CSS에서 클래스와 성능 차이가 없는데, CSS에서 사용하게 되면 재사용성이 떨어지기 때문에 클래스를 주로 사용한다.</li>
+</ul>
+</li>
+<li>모듈(Module)
+<ul>
+<li>레이아웃 요소 안에 들어가는 더 작은 부분들에 대한 스타일을 정의한다. 클래스 선택자를 사용하며 요소 선택자는 가급적 피한다. 클래스 이름은 적용되는 스타일의 내용을 담는다.</li>
+</ul>
+</li>
+<li>상태(State)
+<ul>
+<li>다른 스타일에 덧붙이거나 덮어씌워서 상태를 나타낸다. 그렇기때문에 자바스크립트에 의존하는 스타일이 된다. <code class="language-text">is-</code> prefix를 붙여 상태를 제어하는 스타일임을 나타낸다. 특정 모듈에 한정된 상태는 모듈 이름도 이름에 포함시킨다.</li>
+</ul>
+</li>
+<li>테마(Theme)
+<ul>
+<li>테마는 프로젝트에서 잘 사용되지 않는 카테고리이다. 사용자의 설정에 따라서 CSS를 변경할 수 있는 CSS를 설정할 때 사용하게 되며 접두어로는 <code class="language-text">theme-</code>을 붙여 표시한다.</li>
+</ul>
+</li>
+</ul>
 <h3 id="oocssobject-oriented-css" style="position:relative;"><a href="#oocssobject-oriented-css" aria-label="oocssobject oriented css permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OOCSS(Object Oriented CSS)</h3>
+<p>객체지향 CSS 방법론으로, 두 가지 기본 원칙을 갖고 있다.</p>
+<ul>
+<li>원칙 1. 구조와 모양을 분리한다.
+<ul>
+<li>반복적인 시각적 기능을 별도의 스킨으로 정의하여 다양한 객체와 혼합해 중복코드를 없앤다.</li>
+</ul>
+</li>
+<li>원칙 2. 컨테이너와 컨텐츠를 분리한다.
+<ul>
+<li>스타일을 정의할 때 위치에 의존적인 스타일을 사용하지 않는다. 사물의 모양은 어디에 위치하든지 동일하게 보여야 한다.</li>
+</ul>
+</li>
+</ul>
 <h3 id="bemblock-element-modifier" style="position:relative;"><a href="#bemblock-element-modifier" aria-label="bemblock element modifier permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BEM(Block Element Modifier)</h3>
+<p>웹 페이지를 각각의 컴포넌트의 조합으로 바라보고 접근한 방법론이자 규칙이다. SMACSS가 가이드라인이라는 것에 비해서 좀 더 범위가 좁은 반면에 강제성 측면에서는 다소 강하다고 볼 수 있다. BEM은 CSS로 스타일을 입힐 때 id를 사용하는 것을 막는다. 또한 요소 셀렉터를 통해서 직접 스타일을 적용하는 것도 불허한다. 하나를 더 불허하는데, 그것은 바로 자손 선택자 사용이다. 이러한 규칙들은 재사용성을 높이기 위함이다.</p>
+<ul>
+<li>Naming Convention
+<ul>
+<li>소문자와 숫자만을 이용해 작명하고, 여러 단어의 조합은 하이픈(<code class="language-text">-</code>)과 언더바(<code class="language-text">_</code>)를 사용하여 연결한다.</li>
+</ul>
+</li>
+<li>BEM의 B는 "Block"이다.
+<ul>
+<li>블록이란 재사용할 수 있는 독립적인 페이지 구성 요소를 말하며, HTML에서 블록은 class로 표시된다. 블록은 주변 환경에 영향을 받지 않아야하며, 여백이나 위치를 설정하면 안된다.</li>
+</ul>
+</li>
+<li>BEM의 E는 "Element"이다.
+<ul>
+<li>블록 안에서 특정 기능을 담당하는 부분으로 <code class="language-text">block_element</code>의 형태로 사용한다. 요소는 중첩해서 작성될 수 있다.</li>
+</ul>
+</li>
+<li>BEM의 M은 "Modifier"이다.
+<ul>
+<li>블록이나 요소의 모양, 상태를 정의한다. <code class="language-text">block_element-modifier</code>, <code class="language-text">block-modifier</code> 형태로 사용한다. 수식어에는 불리언 타입과 키-값 타입이 있다.</li>
+</ul>
+</li>
+</ul>
 <h4 id="reference-8" style="position:relative;"><a href="#reference-8" aria-label="reference 8 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h4>
 <ul>
 <li><a href="https://wit.nts-corp.com/2015/04/16/3538">CSS 방법론에 대해서</a></li>
 <li><a href="https://en.bem.info/">BEM</a></li>
 </ul>
-<h2 id="normalizecss-vs-reactcss" style="position:relative;"><a href="#normalizecss-vs-reactcss" aria-label="normalizecss vs reactcss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalize.css vs React.css</h2>
+<h2 id="normalizecss-vs-resetcss" style="position:relative;"><a href="#normalizecss-vs-resetcss" aria-label="normalizecss vs resetcss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalize.css vs reset.css</h2>
+<p>브라우저마다 기본적으로 제공하는 element의 style을 통일시키기 위해 사용하는 두 <code class="language-text">css</code>에 대해서 알아본다.</p>
+<h3 id="resetcss" style="position:relative;"><a href="#resetcss" aria-label="resetcss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>reset.css</h3>
+<p><code class="language-text">reset.css</code>는 기본적으로 제공되는 브라우저 스타일 전부를 제거하기 위해 사용된다. <code class="language-text">reset.css</code>가 적용되면 <code class="language-text">&lt;H1&gt;~&lt;H6&gt;</code>, <code class="language-text">&lt;p&gt;</code>, <code class="language-text">&lt;strong&gt;</code>, <code class="language-text">&lt;em&gt;</code> 등과 같은 표준 요소는 완전히 똑같이 보이며 브라우저가 제공하는 기본적인 styling이 전혀 없다.</p>
+<h3 id="normalizecss" style="position:relative;"><a href="#normalizecss" aria-label="normalizecss permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>normalize.css</h3>
+<p><code class="language-text">normalize.css</code>는 브라우저 간 일관된 스타일링을 목표로 한다. <code class="language-text">&lt;H1&gt;~&lt;H6&gt;</code>과 같은 요소는 브라우저 간에 일관된 방식으로 굵게 표시된다. 추가적인 디자인에 필요한 style만 CSS로 작성해주면 된다.</p>
+<p>즉, <code class="language-text">normalize.css</code>는 모든 것을 "해제" 하기보다는 유용한 기본값을 보존하는 것이다. 예를 들어, sup 또는 sub와 같은 요소는 <code class="language-text">normalize.css</code>가 적용된 후 바로 기대하는 스타일을 보여준다. 반면 <code class="language-text">reset.css</code>를 포함하면 시각적으로 일반 텍스트와 구별할 수 없다. 또한 <code class="language-text">normalize.css</code>는 <code class="language-text">reset.css</code>보다 넓은 범위를 가지고 있으며, HTML5 요소의 표시 설정, 양식 요소의 글꼴 상속 부족, pre-font 크기 렌더링 수정, IE9의 SVG 오버플로 및 iOS의 버튼 스타일링 버그 등에 대한 이슈를 해결해준다.</p>
 <h2 id="그-외-프론트엔드-개발-환경-관련" style="position:relative;"><a href="#%EA%B7%B8-%EC%99%B8-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B4%80%EB%A0%A8" aria-label="그 외 프론트엔드 개발 환경 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>그 외 프론트엔드 개발 환경 관련</h2>
+<h3 id="웹팩webpack이란-" style="position:relative;"><a href="#%EC%9B%B9%ED%8C%A9webpack%EC%9D%B4%EB%9E%80-" aria-label="웹팩webpack이란  permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹팩(Webpack)이란 ?</h3>
+<ul>
+<li><a href="https://joshua1988.github.io/webpack-guide/webpack/what-is-webpack.html#%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80">https://joshua1988.github.io/webpack-guide/webpack/what-is-webpack.html#%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80</a></li>
+</ul>
+<h3 id="바벨babel이란" style="position:relative;"><a href="#%EB%B0%94%EB%B2%A8babel%EC%9D%B4%EB%9E%80" aria-label="바벨babel이란 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>바벨(Babel)이란?</h3>
+<p>바벨은 크로스 브라우징 이슈를 해결하기 위해 생겨난 툴이다. ES6+ 버전의 자바스크립트나 타입스크립트, JSX 등 다른 언어로 분류되는 언어들에 대해서도 모든 브라우저에서 동작할 수 있도록 호환성을 지켜준다. <strong>바벨은 이렇게 추상화 수준을 유지한 채로 코드를 변화시키는 트랜스파일러의 역할을 한다</strong>. 바벨을 통해 ES6+의 자바스크립트 코드는 하위 버전으로 변환되고, 그로 인해 IE나 다른 브라우저에서 동작할 수 있게 만든다.</p>
 <h2 id="추가자료들" style="position:relative;"><a href="#%EC%B6%94%EA%B0%80%EC%9E%90%EB%A3%8C%EB%93%A4" aria-label="추가자료들 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>추가자료들</h2>
+<ul>
+<li><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Tip">미세먼지 같은 면접 팁</a></li>
+<li><a href="https://github.com/jojoldu/junior-recruit-scheduler">주니어 개발자를 위한 취업 정보</a></li>
+<li><a href="https://github.com/mission-peace/interview">mission-peace/interview</a>
+<ul>
+<li>각종 알고리즘에 대한 코드와 동영상 강의 링크를 제공합니다. (영어)</li>
+</ul>
+</li>
+<li><a href="https://github.com/DopplerHQ/awesome-interview-questions">awesome-interview-questions</a>
+<ul>
+<li>각종 언어, CS 기초에 대한 interview 질문들이 정리되어 있습니다. (영어)</li>
+</ul>
+</li>
+<li><a href="https://github.com/jwasham/coding-interview-university/blob/main/translations/README-ko.md">coding-interview-university</a>
+<ul>
+<li>구글 인터뷰를 준비하면서 정리한 자료가 한국어로 번역되어 있는 자료입니다. (한국어 version)</li>
+</ul>
+</li>
+<li><a href="https://github.com/yangshun/tech-interview-handbook">tech-interview-handbook</a>
+<ul>
+<li>코딩 인터뷰에 관련되어 정리되어있는 respository 입니다. (영어)</li>
+</ul>
+</li>
+<li><a href="https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d">A perfect guide for cracking a JavaScript interview (A developer's perspective)</a>
+<ul>
+<li><a href="https://github.com/milooy">@JayJin</a>님이 추천하신 자바스크립트 인터뷰 아티클입니다.</li>
+</ul>
+</li>
+</ul>
 <!-- 
  # 면접
 https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B8-%EB%AA%A8%EC%9D%8C
@@ -2463,10 +2568,18 @@ https://velog.io/@honeysuckle/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%
 </ul>
 </li>
 <li>
-<p><a href="#normalizecss-vs-reactcss">Normalize.css vs React.css</a></p>
+<p><a href="#normalizecss-vs-resetcss">Normalize.css vs reset.css</a></p>
+<ul>
+<li><a href="#resetcss">reset.css</a></li>
+<li><a href="#normalizecss">normalize.css</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#%EA%B7%B8-%EC%99%B8-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B4%80%EB%A0%A8">그 외 프론트엔드 개발 환경 관련</a></p>
+<ul>
+<li><a href="#%EC%9B%B9%ED%8C%A9webpack%EC%9D%B4%EB%9E%80-">웹팩(Webpack)이란 ?</a></li>
+<li><a href="#%EB%B0%94%EB%B2%A8babel%EC%9D%B4%EB%9E%80">바벨(Babel)이란?</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#%EC%B6%94%EA%B0%80%EC%9E%90%EB%A3%8C%EB%93%A4">추가자료들</a></p>
